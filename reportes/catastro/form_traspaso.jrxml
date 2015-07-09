@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rep_nuevo_negocio" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7ff1e6cc-4252-4260-a5d0-033d6c1c976e">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="218"/>
+	<parameter name="idcon" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="idneg" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fechaReporte" class="java.lang.String"/>
+	<parameter name="horaReporte" class="java.lang.String"/>
+	<parameter name="mesPagado" class="java.lang.String"/>
+	<parameter name="numRecibo" class="java.lang.String"/>
+	<parameter name="fecRec" class="java.lang.String"/>
+	<parameter name="nuePro" class="java.lang.String"/>
+	<parameter name="proAct" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT rp.ocu,rp.dep,rp.mun,rp.dir,rp.dui,rp.nit,cn.nom_neg,cn.rub_neg,cn.dir_neg,cn.med_neg,cc.mot_cie FROM rf_persona rp, ca_negocio cn, ca_cierre cc WHERE rp.cod_per=cn.cod_con and cn.cod_con=$P{idcon} and cn.cod_neg=cc.cod_neg and cc.cod_neg=$P{idneg}]]>
+	</queryString>
+	<field name="ocu" class="java.lang.String"/>
+	<field name="dep" class="java.lang.String"/>
+	<field name="mun" class="java.lang.String"/>
+	<field name="dir" class="java.lang.String"/>
+	<field name="dui" class="java.lang.String"/>
+	<field name="nit" class="java.lang.String"/>
+	<field name="nom_neg" class="java.lang.String"/>
+	<field name="rub_neg" class="java.lang.String"/>
+	<field name="dir_neg" class="java.lang.String"/>
+	<field name="med_neg" class="java.lang.Double"/>
+	<field name="mot_cie" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="119" splitType="Stretch">
+			<staticText>
+				<reportElement x="107" y="27" width="366" height="28" uuid="e884bae9-0c56-4c5b-a1ea-a78b97f1eb62"/>
+				<textElement textAlignment="Center">
+					<font fontName="Cambria" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SOLICITUD DE CAMBIO DE PROPIETARIO]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="46" splitType="Stretch">
+			<staticText>
+				<reportElement x="18" y="0" width="183" height="20" uuid="036973e3-67e5-41cd-8f8f-0b55ad1a29ad"/>
+				<textElement>
+					<font fontName="Cambria" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SEÑOR ALCALDE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="18" y="25" width="100" height="20" uuid="1bd7c049-6277-410c-80c7-6664feff77b4"/>
+				<textElement>
+					<font fontName="Cambria" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PRESENTE:]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="287">
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="27" y="10" width="532" height="90" uuid="bba6e539-4b67-4a58-b5ba-09d5adf5e4db"/>
+				<textElement textAlignment="Left">
+					<font fontName="Cambria" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Yo, "+$P{proAct}+" Mayor de edad, "+$F{ocu}+" del domicilio de "+$F{dep}+" residente en  "+$F{dir}+" con Documento Único de Identidad número "+$F{dui}+" y Número de Identificación Tributaria "+$F{nit}+" a usted, respetuosamente SOLICITO:"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="27" y="119" width="532" height="44" uuid="b0678ba9-ab9d-4e1e-8be1-7153e34d2652"/>
+				<textElement>
+					<font fontName="Cambria" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Se traspase el negocio: "+$F{nom_neg}+" a nombre de "+$P{nuePro}+" ubicado en "+$F{dir_neg}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="222" width="532" height="38" uuid="03600cfb-b716-463d-9ebb-922d7586f255"/>
+				<textElement>
+					<font fontName="Cambria" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Para lo cual me compormeto a llenar los requisitos legales que me exigan y pagar el impuesto o tasa municipal correspondiente.]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="27" y="175" width="532" height="20" uuid="0a767476-6bd0-4622-99b1-1e7616b3f0ea"/>
+				<textFieldExpression><![CDATA["Está pagado hasta el mes de "+$P{mesPagado}+" según recibo de ingreso Fórm 1. Nº "+$P{numRecibo}+" de fecha "+$P{fecRec}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="233" splitType="Stretch">
+			<staticText>
+				<reportElement x="21" y="0" width="86" height="20" uuid="cceca834-8ce7-4256-bfc6-eb0925c27931"/>
+				<textElement>
+					<font fontName="Cambria" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[San Cristóbal,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="188" y="61" width="18" height="20" uuid="757c6f65-6953-4fa7-af33-1a970c51dbda"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Cambria" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[F.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="201" y="74" width="177" height="1" uuid="bcb67e51-d811-44c5-b21a-1833091656a1"/>
+			</line>
+			<textField>
+				<reportElement x="204" y="81" width="229" height="20" uuid="ebeac1bd-01bf-43d6-b0fa-34d8616c3134"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Cambria" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nom}+" "+$F{ape1}+" "+$F{ape2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="25" y="111" width="91" height="20" uuid="5c034021-5477-464e-ab85-b8ad3616e5d0"/>
+				<textElement>
+					<font fontName="Cambria" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Presentado a las]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="167" y="111" width="405" height="39" uuid="9ae18a1a-5022-4435-a163-3f90de8d49ed"/>
+				<textElement>
+					<font fontName="Cambria" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[horas del día de su fecha, quien asegura estar firmando de su propio puño y letra]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="107" y="0" width="245" height="20" uuid="2679dc5d-0ef6-40f9-a303-e0d40fd2c676"/>
+				<textFieldExpression><![CDATA[$P{fechaReporte}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="121" y="111" width="47" height="20" uuid="562385e9-a7b5-4a16-ba72-3cafc590ca77"/>
+				<textFieldExpression><![CDATA[$P{horaReporte}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="188" y="163" width="18" height="20" uuid="5f80a86e-c376-4d67-bd32-5196889c6532"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Cambria" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[F.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="201" y="182" width="177" height="1" uuid="6a47fc44-d3db-4e82-96f5-afc580fc35bd"/>
+			</line>
+			<staticText>
+				<reportElement x="237" y="188" width="126" height="20" uuid="ac12885d-5a01-455c-beb2-c3934a3c393b"/>
+				<textElement>
+					<font fontName="Cambria" size="12"/>
+				</textElement>
+				<text><![CDATA[Secretario Municipal]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+</jasperReport>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rep_nacimiento_partida" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="77a79691-440b-4cfd-afd1-963f84e84cb1">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="num_lib" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="num_par" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[Select * from rf_defuncion_partida where (num_lib, num_par) = ($P{num_lib} , $P{num_par})]]>
+	</queryString>
+	<field name="ano_lib" class="java.lang.Integer"/>
+	<field name="num_lib" class="java.lang.Integer"/>
+	<field name="num_tom" class="java.lang.Integer"/>
+	<field name="num_pag" class="java.lang.Integer"/>
+	<field name="num_par" class="java.lang.Integer"/>
+	<field name="cod_per" class="java.lang.Integer"/>
+	<field name="nom" class="java.lang.String"/>
+	<field name="ape1" class="java.lang.String"/>
+	<field name="ape2" class="java.lang.String"/>
+	<field name="sex" class="java.lang.String"/>
+	<field name="eda" class="java.lang.Integer"/>
+	<field name="est_fam" class="java.lang.String"/>
+	<field name="nom_con" class="java.lang.String"/>
+	<field name="ocu" class="java.lang.String"/>
+	<field name="dep_org" class="java.lang.String"/>
+	<field name="mun_org" class="java.lang.String"/>
+	<field name="dep_res" class="java.lang.String"/>
+	<field name="mun_res" class="java.lang.String"/>
+	<field name="canlug_res" class="java.lang.String"/>
+	<field name="jur" class="java.lang.String"/>
+	<field name="nac" class="java.lang.String"/>
+	<field name="dui" class="java.lang.String"/>
+	<field name="dep_def" class="java.lang.String"/>
+	<field name="mun_def" class="java.lang.String"/>
+	<field name="canlug_def" class="java.lang.String"/>
+	<field name="loc_def" class="java.lang.String"/>
+	<field name="fec_def" class="java.sql.Date"/>
+	<field name="hor_min" class="java.sql.Time"/>
+	<field name="asi_med" class="java.lang.Boolean"/>
+	<field name="cau_def" class="java.lang.String"/>
+	<field name="nom_pro" class="java.lang.String"/>
+	<field name="car_pro" class="java.lang.String"/>
+	<field name="jvpm" class="java.lang.String"/>
+	<field name="nom_mad" class="java.lang.String"/>
+	<field name="nom_pad" class="java.lang.String"/>
+	<field name="cem" class="java.lang.String"/>
+	<field name="inf" class="java.lang.String"/>
+	<field name="dui_inf" class="java.lang.String"/>
+	<field name="par_inf" class="java.lang.String"/>
+	<field name="nom_tes1" class="java.lang.String"/>
+	<field name="dui_tes1" class="java.lang.String"/>
+	<field name="nom_tes2" class="java.lang.String"/>
+	<field name="dui_tes2" class="java.lang.String"/>
+	<field name="fec_reg" class="java.sql.Date"/>
+	<field name="enm" class="java.lang.String"/>
+	<field name="esc_lib" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="88" splitType="Stretch">
+			<image>
+				<reportElement x="52" y="26" width="59" height="54" uuid="fd378bce-3d9f-4294-bc57-1a4e463c4a35"/>
+				<imageExpression><![CDATA["..\\..\\img\\logoes.jpg"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="443" y="26" width="67" height="54" uuid="f15dc53f-920e-493f-91f1-d4a4bfbaaa68"/>
+				<imageExpression><![CDATA["..\\..\\img\\logoal.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="142" y="26" width="262" height="22" uuid="4230e682-b194-4446-812c-f634612b8196"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REGISTRO DEL ESTADO FAMILIAR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="89" y="42" width="371" height="20" forecolor="#006699" uuid="c831bab9-bbad-47d7-9d97-934464c5c730"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ALCALDIA MUNICIPAL VILLA SAN CRISTOBAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="111" y="57" width="332" height="14" forecolor="#000000" uuid="fc94029b-9d3e-4d75-8e40-82e9147c70af"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DEPARTAMENTO DE CUSCATLÁN, TEL.: 2379-7131]]></text>
+			</staticText>
+			<line>
+				<reportElement x="119" y="71" width="312" height="1" forecolor="#0000CC" uuid="75e82567-5252-40f9-907b-fa8696c7881b"/>
+			</line>
+			<line>
+				<reportElement x="119" y="76" width="312" height="1" forecolor="#0000FF" uuid="df8d225a-efbc-4eb3-a2a5-68cc9523574a"/>
+			</line>
+		</band>
+	</title>
+	<detail>
+		<band height="417">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="52" y="3" width="474" height="400" uuid="2aec1bde-0694-4f3d-ab49-d4d46816b7b6"/>
+				<textElement textAlignment="Justified">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cuerpo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="175" splitType="Stretch">
+			<staticText>
+				<reportElement x="142" y="61" width="289" height="21" uuid="e48de1c9-bda4-4eb2-a56a-0e3599fd8d08"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[José Angel Alvarado Mancía]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="142" y="82" width="289" height="21" uuid="9bb143ad-e0e1-4ea3-8a06-7778ea479f63"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Jefe del Registro del Estado Familiar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="199" y="29" width="175" height="21" uuid="d8c1c21c-2032-4d1b-9912-e3f61538f9ee"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[F____________________]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

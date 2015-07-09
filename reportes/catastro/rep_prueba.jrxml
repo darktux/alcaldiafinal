@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rep_prueba" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="175207e2-6ad5-499f-8175-92a9feb5d3ed">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="fechaReporte" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from rf_persona]]>
+	</queryString>
+	<field name="cod_per" class="java.lang.Integer"/>
+	<field name="nom" class="java.lang.String"/>
+	<field name="ape1" class="java.lang.String"/>
+	<field name="ape2" class="java.lang.String"/>
+	<field name="sex" class="java.lang.String"/>
+	<field name="fec_nac" class="java.sql.Date"/>
+	<field name="dui" class="java.lang.String"/>
+	<field name="nit" class="java.lang.String"/>
+	<field name="tel1" class="java.lang.String"/>
+	<field name="tel2" class="java.lang.String"/>
+	<field name="dir" class="java.lang.String"/>
+	<field name="ocu" class="java.lang.String"/>
+	<field name="est_civ" class="java.lang.String"/>
+	<field name="dep" class="java.lang.String"/>
+	<field name="mun" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<line>
+				<reportElement x="88" y="55" width="376" height="1" forecolor="#0000FF" uuid="229e3340-d9f0-4a9d-b76b-d0cf0c1ce9f6"/>
+			</line>
+			<staticText>
+				<reportElement x="137" y="35" width="250" height="20" uuid="199a1efb-2908-4c0e-bee4-0faedcf46112"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[DEPARTAMENTO DE CUSCATLAN, TEL. 23797131]]></text>
+			</staticText>
+			<line>
+				<reportElement x="88" y="65" width="376" height="1" forecolor="#FF0000" uuid="86f91006-a3cf-4c83-8a8a-265fed34f42d"/>
+			</line>
+			<staticText>
+				<reportElement x="78" y="15" width="386" height="20" forecolor="#0000FF" uuid="d512c8fb-6a3e-4e22-b6c6-a0659f49b200"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[ALCALDIA MUNICIPAL VILLA DE SAN CRISTOBAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="139" y="0" width="248" height="19" uuid="870cbc46-4fd7-4523-b2ef-ef25480ee2d6"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[CATASTRO]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="572" height="20" uuid="7e7bf80b-1ba4-423e-abe5-b8b44573d3c5"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="e457a6b5-9525-4912-9c47-f2001c0996dc"/>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="287" y="0" width="100" height="20" uuid="2591dd7b-d294-4f05-bc83-6bf93c99106a"/>
+				<text><![CDATA[Sexo]]></text>
+			</staticText>
+			<line>
+				<reportElement x="216" y="0" width="1" height="12" uuid="d631cd53-e3b6-4dfa-b523-fbb48403bf84"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="1" width="572" height="20" uuid="9bb741fd-d2fa-4236-a1d2-27c36c62f145"/>
+			</rectangle>
+			<textField>
+				<reportElement x="0" y="0" width="216" height="20" uuid="90e46f84-5c13-488a-8232-1e1a6447f56f"/>
+				<textFieldExpression><![CDATA[$F{nom}+" "+$F{ape1}+" "+$F{ape2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="287" y="0" width="100" height="20" uuid="3af12772-a9f1-48a9-aba0-96ce81b44bec"/>
+				<textFieldExpression><![CDATA[$F{sex}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="216" y="1" width="1" height="19" uuid="b04e9fb1-8680-48da-8f91-fb3fbd956515"/>
+			</line>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="50"/>
+	</pageFooter>
+</jasperReport>

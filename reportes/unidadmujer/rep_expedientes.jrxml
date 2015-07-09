@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rep_expedientes" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a34c8373-10bb-4132-8fc7-129967550a3f">
+	<property name="ireport.zoom" value="1.1"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="12"/>
+	<parameter name="logoal" class="java.lang.String"/>
+	<parameter name="logoes" class="java.lang.String"/>
+	<parameter name="fechaReporte" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="89" splitType="Stretch">
+			<staticText>
+				<reportElement x="154" y="35" width="250" height="20" uuid="8a2a3a2f-53f6-467a-a8ba-ccdb884db197"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[DEPARTAMENTO DE CUSCATLAN, TEL. 23797131]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="156" y="0" width="248" height="19" uuid="f74d0f99-c1f1-45c9-8c1f-8e25007d339d"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[UNIDAD DE GENERO]]></text>
+			</staticText>
+			<line>
+				<reportElement x="105" y="65" width="376" height="1" forecolor="#FF0000" uuid="22db8b1a-a54b-4b1e-88fa-23c6a6d95f36"/>
+			</line>
+			<line>
+				<reportElement x="105" y="55" width="376" height="1" forecolor="#0000FF" uuid="a75c61cd-2b2f-41b8-9c48-b013f4358c04"/>
+			</line>
+			<staticText>
+				<reportElement x="95" y="15" width="386" height="20" forecolor="#0000FF" uuid="6ad1dd5b-d182-478a-955d-6f93c02be2fa"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[ALCALDIA MUNICIPAL VILLA DE SAN CRISTOBAL]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="2" width="80" height="80" uuid="648a80db-bd48-4c3e-a59d-3def995b9eb8"/>
+				<imageExpression><![CDATA[$P{logoes}]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="492" y="0" width="80" height="80" uuid="a79786fe-1feb-4759-b84b-d0039642f23b"/>
+				<imageExpression><![CDATA[$P{logoal}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="195" y="1" width="188" height="20" uuid="ac311240-e178-4979-9686-3dabf1db89b8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reporte de Expediente]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

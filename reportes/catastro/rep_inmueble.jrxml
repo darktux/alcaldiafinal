@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rep_proy_eje" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="625d05ff-2321-488b-9672-b3f93ee5039f">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="logoes" class="java.lang.String"/>
+	<parameter name="logoal" class="java.lang.String"/>
+	<parameter name="fechaReporte" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from ca_inmueble ci,rf_persona rp where ci.cod_pro=rp.cod_per]]>
+	</queryString>
+	<field name="cod_inm" class="java.lang.String"/>
+	<field name="cod_pro" class="java.lang.Integer"/>
+	<field name="zon_inm" class="java.lang.String"/>
+	<field name="dir_inm" class="java.lang.String"/>
+	<field name="med_inm" class="java.lang.Double"/>
+	<field name="lim_nor" class="java.lang.String"/>
+	<field name="lim_sur" class="java.lang.String"/>
+	<field name="lim_est" class="java.lang.String"/>
+	<field name="lim_oes" class="java.lang.String"/>
+	<field name="cod_per" class="java.lang.Integer"/>
+	<field name="nom" class="java.lang.String"/>
+	<field name="ape1" class="java.lang.String"/>
+	<field name="ape2" class="java.lang.String"/>
+	<field name="sex" class="java.lang.String"/>
+	<field name="fec_nac" class="java.sql.Date"/>
+	<field name="dui" class="java.lang.String"/>
+	<field name="nit" class="java.lang.String"/>
+	<field name="tel1" class="java.lang.String"/>
+	<field name="tel2" class="java.lang.String"/>
+	<field name="dir" class="java.lang.String"/>
+	<field name="ocu" class="java.lang.String"/>
+	<field name="est_civ" class="java.lang.String"/>
+	<field name="dep" class="java.lang.String"/>
+	<field name="mun" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="87" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="80" height="80" uuid="314ffe22-5f9a-4e7f-9865-28a93810c2b6"/>
+				<imageExpression><![CDATA[$P{logoes}]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="492" y="0" width="80" height="80" uuid="ec62edc6-3f42-4f23-b744-3cece5458517"/>
+				<imageExpression><![CDATA[$P{logoal}]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="103" y="75" width="376" height="1" forecolor="#0000FF" uuid="8776c802-fd3f-404e-800c-3c064bd73e2c"/>
+			</line>
+			<line>
+				<reportElement x="103" y="65" width="376" height="1" forecolor="#0000FF" uuid="5f4cfa3e-1148-4b9a-b88a-44da72903307"/>
+			</line>
+			<staticText>
+				<reportElement x="97" y="27" width="371" height="20" forecolor="#006699" uuid="9b75be59-2c19-4212-9fb5-7190ad705295"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ALCALDIA MUNICIPAL VILLA SAN CRISTOBAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="150" y="13" width="262" height="22" uuid="9b033a35-10bd-43d6-a61d-e9e66f85ebbf"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REGISTRO DEL ESTADO FAMILIAR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="119" y="44" width="332" height="14" forecolor="#000000" uuid="83f6a954-1fa6-47d1-aff8-5b86c469ed8a"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DEPARTAMENTO DE CUSCATLÁN, TEL.: 2379-7131]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="50">
+			<staticText>
+				<reportElement x="187" y="13" width="188" height="20" uuid="b916e5ee-4637-4816-9867-cdcf177a6b29"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reporte de Inmuebles]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="572" height="20" forecolor="#000000" backcolor="#F4F4F4" uuid="6be64437-1575-47e4-87ea-da985b0b9f40"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="de06141d-2473-4549-90f7-1c6aa5a5e136"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="0" width="172" height="20" uuid="8bf3b667-b415-4911-a753-8909bc0e06f7"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Dirección]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="272" y="0" width="100" height="20" uuid="435cf58a-7f89-4d0e-859a-8ac0607a9a4a"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Mtrs. Lineales]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="372" y="0" width="200" height="20" uuid="6681ba6b-c928-4b2f-8486-13893d034556"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Propietario]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="572" height="20" uuid="87688e8f-94fe-46c9-8855-a62e2ddfb1bb"/>
+			</rectangle>
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="be88fa28-39af-453a-b7b7-9cfcdfbdab78"/>
+				<textFieldExpression><![CDATA[$F{cod_inm}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="1" width="172" height="20" uuid="17b79827-16ad-4cc7-9445-19e10e515a7a"/>
+				<textFieldExpression><![CDATA[$F{dir_inm}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="272" y="1" width="100" height="20" uuid="d5aae2c7-cece-4eae-9d5a-5bec811dec55"/>
+				<textFieldExpression><![CDATA[$F{med_inm}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="372" y="1" width="200" height="20" uuid="9d758ede-87c7-4f3d-81e3-a342f4e9b85d"/>
+				<textFieldExpression><![CDATA[$F{nom}+" "+$F{ape1}+" "+$F{ape2}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="50">
+			<textField evaluationTime="Report">
+				<reportElement x="298" y="30" width="100" height="20" uuid="cea750f8-baab-484e-a345-f16c5da2da02"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="272" y="30" width="27" height="20" uuid="3f448f95-13ef-402b-b3fa-f34b27a66469"/>
+				<text><![CDATA[de]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="187" y="30" width="50" height="20" uuid="450e08ec-0cb8-4877-9b2c-9fe41f0ebc7c"/>
+				<text><![CDATA[Pagina]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="237" y="30" width="37" height="20" uuid="12e91aec-6dac-4a8e-8d6f-8c927d57c7e8"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="472" y="30" width="100" height="20" uuid="30174c73-443e-4afd-bb66-4a239a5bc734"/>
+				<textFieldExpression><![CDATA[$P{fechaReporte}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

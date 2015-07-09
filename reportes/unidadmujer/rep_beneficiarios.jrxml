@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rep_expedientes" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a34c8373-10bb-4132-8fc7-129967550a3f">
+	<property name="ireport.zoom" value="1.4641000000000013"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="175"/>
+	<subDataset name="New Dataset 1" uuid="20c2ce20-422c-4d8b-91a6-49fbe72b090e">
+		<queryString language="SQL">
+			<![CDATA[select b.cod_pro as proyecto, a.nom as nombre, a.ape1 as apellido from rf_persona a,um_ben_proy b where a.cod_per=b.cod_per and b.cod_pro=(select cod_pro from um_proyecto)]]>
+		</queryString>
+		<field name="proyecto" class="java.lang.String"/>
+		<field name="nombre" class="java.lang.String"/>
+		<field name="apellido" class="java.lang.String"/>
+		<group name="proyecto">
+			<groupExpression><![CDATA[$F{proyecto}]]></groupExpression>
+		</group>
+		<group name="nombre">
+			<groupExpression><![CDATA[$F{nombre}]]></groupExpression>
+		</group>
+		<group name="apellido">
+			<groupExpression><![CDATA[$F{apellido}]]></groupExpression>
+		</group>
+	</subDataset>
+	<parameter name="logoal" class="java.lang.String"/>
+	<parameter name="logoes" class="java.lang.String"/>
+	<parameter name="fechaReporte" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select b.cod_pro CODIGO,c.nom_pro PROYECTO, CONCAT(a.nom,' ',a.ape1,' ',a.ape2) as BENEFICIARIO from rf_persona a,um_ben_proy b, um_proyecto as c where a.cod_per=b.cod_per and b.cod_pro=c.cod_pro and c.cod_pro in (select cod_pro from um_proyecto)]]>
+	</queryString>
+	<field name="codigo" class="java.lang.String"/>
+	<field name="proyecto" class="java.lang.String"/>
+	<field name="beneficiario" class="java.lang.String"/>
+	<variable name="apellido_1" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[]]></variableExpression>
+	</variable>
+	<variable name="nombre_1" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[]]></variableExpression>
+	</variable>
+	<variable name="cod_pro_1" class="java.lang.Integer" resetType="Column" calculation="DistinctCount">
+		<variableExpression><![CDATA[]]></variableExpression>
+	</variable>
+	<variable name="codigo_1" class="java.lang.Integer" resetType="Group" resetGroup="Proyecto" calculation="Count">
+		<variableExpression><![CDATA[$F{codigo}]]></variableExpression>
+	</variable>
+	<group name="Proyecto">
+		<groupExpression><![CDATA[$F{codigo}+' '+$F{proyecto}]]></groupExpression>
+		<groupHeader>
+			<band height="20">
+				<rectangle>
+					<reportElement mode="Opaque" x="1" y="0" width="571" height="20" backcolor="#F4F4F4" uuid="f4c6340f-fdcc-40ec-a397-dbe5af830f93"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="397" y="0" width="100" height="20" uuid="0aee1d32-5051-4085-a55b-3d0ba75ce630"/>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Benefeciarios]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="22" y="0" width="100" height="20" uuid="30f7c4f4-98bb-42d3-bfcc-53c7ab89688d"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Codigo de Proyecto]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="154" y="0" width="100" height="20" uuid="e014f8cd-9f8d-4a4d-9351-2c0314062a60"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Proyecto]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="92" splitType="Stretch">
+			<staticText>
+				<reportElement x="154" y="35" width="250" height="20" uuid="8a2a3a2f-53f6-467a-a8ba-ccdb884db197"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[DEPARTAMENTO DE CUSCATLAN, TEL. 23797131]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="156" y="0" width="248" height="19" uuid="f74d0f99-c1f1-45c9-8c1f-8e25007d339d"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[UNIDAD DE GENERO]]></text>
+			</staticText>
+			<line>
+				<reportElement x="105" y="65" width="376" height="1" forecolor="#0000FF" uuid="22db8b1a-a54b-4b1e-88fa-23c6a6d95f36"/>
+			</line>
+			<line>
+				<reportElement x="105" y="55" width="376" height="1" forecolor="#0000FF" uuid="a75c61cd-2b2f-41b8-9c48-b013f4358c04"/>
+			</line>
+			<staticText>
+				<reportElement x="95" y="15" width="386" height="20" forecolor="#0000FF" uuid="6ad1dd5b-d182-478a-955d-6f93c02be2fa"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[ALCALDIA MUNICIPAL VILLA DE SAN CRISTOBAL]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="2" width="80" height="80" uuid="648a80db-bd48-4c3e-a59d-3def995b9eb8"/>
+				<imageExpression><![CDATA[$P{logoes}]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="492" y="0" width="80" height="80" uuid="a79786fe-1feb-4759-b84b-d0039642f23b"/>
+				<imageExpression><![CDATA[$P{logoal}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="29" splitType="Stretch">
+			<staticText>
+				<reportElement x="195" y="1" width="188" height="20" uuid="ac311240-e178-4979-9686-3dabf1db89b8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reporte de Beneficiarios]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="8" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="27" splitType="Stretch">
+			<textField>
+				<reportElement x="307" y="0" width="265" height="26" uuid="740b0661-bebe-4f46-b068-6419a787e256"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{beneficiario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="22" y="7" width="100" height="20" uuid="e44fe119-d5c3-4d73-ad1e-c1c7a67ff748"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{codigo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="154" y="6" width="100" height="20" uuid="bc90cd1f-1ce8-4ff0-830f-c9b7b2290082"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA[$F{proyecto}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<break type="Column">
+				<reportElement x="0" y="0" width="572" height="1" backcolor="#CCCCCC" uuid="3983b85f-dca9-4df8-a0e5-d1e57998ba9d"/>
+			</break>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="472" y="20" width="100" height="20" uuid="62a9208d-5381-4c0c-95cc-1b7e48ed0fec"/>
+				<textFieldExpression><![CDATA[$P{fechaReporte}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="20" width="16" height="20" uuid="62745c77-fdf9-4970-8aff-e627156afb68"/>
+				<text><![CDATA[de]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="229" y="20" width="34" height="20" uuid="32ab9574-fc29-4029-ab62-586e94fee6c3"/>
+				<text><![CDATA[Pagina]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="263" y="20" width="17" height="20" uuid="01d481cf-992f-4fa4-8dbf-c3152a375340"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="296" y="20" width="100" height="20" uuid="78bba393-c429-4d00-9f5c-518eda4600e6"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

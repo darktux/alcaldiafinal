@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rep_proy_eje" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="625d05ff-2321-488b-9672-b3f93ee5039f">
+	<property name="ireport.zoom" value="1.2396694214876032"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="logoes" class="java.lang.String"/>
+	<parameter name="logoal" class="java.lang.String"/>
+	<parameter name="fechaReporte" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from um_proyecto where est ilike '%En Ejecución%']]>
+	</queryString>
+	<field name="cod_pro" class="java.lang.String"/>
+	<field name="nom_pro" class="java.lang.String"/>
+	<field name="des" class="java.lang.String"/>
+	<field name="ubi" class="java.lang.String"/>
+	<field name="fec_ini" class="java.sql.Date"/>
+	<field name="fec_fin" class="java.sql.Date"/>
+	<field name="tip_fon" class="java.lang.String"/>
+	<field name="mon_pro" class="java.lang.Double"/>
+	<field name="mon_ext" class="java.lang.Double"/>
+	<field name="pat" class="java.lang.String"/>
+	<field name="est" class="java.lang.String"/>
+	<variable name="montoextpro" class="java.lang.Double">
+		<variableExpression><![CDATA[$V{montoextpro}+$F{mon_pro}+$F{mon_ext}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="95" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="80" height="80" uuid="3cf4b2db-0def-4e55-8307-70f27402bec3"/>
+				<imageExpression><![CDATA[$P{logoes}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="95" y="28" width="386" height="20" forecolor="#0000FF" uuid="c90bb88f-e253-48b9-b15f-0919d87086e9"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[ALCALDIA MUNICIPAL VILLA DE SAN CRISTOBAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="156" y="13" width="248" height="19" uuid="66174655-a3aa-4b5f-a716-58c8ce031685"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[CATASTRO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="154" y="48" width="250" height="20" uuid="d6ec91a1-1c11-4ec0-b1cb-4439f7d764ac"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[DEPARTAMENTO DE CUSCATLAN, TEL. 23797131]]></text>
+			</staticText>
+			<line>
+				<reportElement x="110" y="75" width="376" height="1" forecolor="#0000FF" uuid="2229fb2a-3d67-45be-aab0-c51b8fa61e35"/>
+			</line>
+			<line>
+				<reportElement x="110" y="85" width="376" height="1" forecolor="#FF0000" uuid="21e0c1ec-b333-42ba-a64f-39bb7fbd39ed"/>
+			</line>
+			<image>
+				<reportElement x="492" y="0" width="80" height="80" uuid="f116c529-e244-43c2-9994-25f4206b8d1c"/>
+				<imageExpression><![CDATA[$P{logoal}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="50">
+			<staticText>
+				<reportElement x="194" y="13" width="188" height="20" uuid="88769d22-5cbc-4fef-93b2-0e9ab2b036ee"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Proyectos en Ejecución]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="572" height="20" uuid="6be64437-1575-47e4-87ea-da985b0b9f40"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="de06141d-2473-4549-90f7-1c6aa5a5e136"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="0" width="172" height="20" uuid="8bf3b667-b415-4911-a753-8909bc0e06f7"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Proyecto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="272" y="0" width="100" height="20" uuid="435cf58a-7f89-4d0e-859a-8ac0607a9a4a"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Inicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="372" y="0" width="100" height="20" uuid="6681ba6b-c928-4b2f-8486-13893d034556"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Fin]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="472" y="0" width="100" height="20" uuid="a571f5ed-eec8-4e09-b110-5d7148094f44"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Monto]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="572" height="20" uuid="87688e8f-94fe-46c9-8855-a62e2ddfb1bb"/>
+			</rectangle>
+			<textField>
+				<reportElement x="10" y="1" width="90" height="20" uuid="f06007a9-5ed3-4c91-b1d2-830cea6c6000"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{cod_pro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="1" width="172" height="20" uuid="a86ee8d0-f35a-4f51-979f-0a2530435fd2"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nom_pro}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="272" y="1" width="100" height="20" uuid="b3a52dcb-d365-40a9-886b-75290b63aae6"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{fec_ini}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="372" y="1" width="100" height="20" uuid="a129937c-3309-4f85-a87c-0bc0e7f42eec"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{fec_fin}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement key="" x="472" y="1" width="100" height="20" uuid="1341cae8-334b-45f5-b7f1-bc42e8d51173"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{montoextpro}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="50">
+			<staticText>
+				<reportElement x="263" y="19" width="27" height="20" uuid="75364fe5-6603-401b-a2a2-7090282870b3"/>
+				<text><![CDATA[de]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="178" y="19" width="50" height="20" uuid="2184a341-879d-4810-ba85-4e9052ef2ca4"/>
+				<text><![CDATA[Pagina]]></text>
+			</staticText>
+			<textField evaluationTime="Report">
+				<reportElement x="289" y="19" width="100" height="20" uuid="835b5a97-d77e-4c14-805d-bf138f3c5225"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="463" y="19" width="100" height="20" uuid="d49513f5-25c2-40de-8a36-4ccf93bd4856"/>
+				<textFieldExpression><![CDATA[$P{fechaReporte}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="228" y="19" width="37" height="20" uuid="a681b577-0205-4f65-9cc0-f67e4993cfd6"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

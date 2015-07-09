@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="fec_adq" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="67591bf9-da08-43e0-80ac-d8c65d62714a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="logoal" class="java.lang.String"/>
+	<parameter name="logoes" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from af_activo where act='t' and fec_adq between now()- interval '15 days' and now()]]>
+	</queryString>
+	<field name="cod_act" class="java.lang.String"/>
+	<field name="nom" class="java.lang.String"/>
+	<field name="mar" class="java.lang.String"/>
+	<field name="mod" class="java.lang.String"/>
+	<field name="ser" class="java.lang.String"/>
+	<field name="cos_adq" class="java.lang.Double"/>
+	<field name="fec_adq" class="java.sql.Date"/>
+	<field name="act" class="java.lang.Boolean"/>
+	<field name="cod_dep" class="java.lang.Integer"/>
+	<field name="cod_tfondo" class="java.lang.Integer"/>
+	<field name="ori" class="java.lang.String"/>
+	<field name="fec_gar" class="java.sql.Date"/>
+	<field name="don" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="96" splitType="Stretch">
+			<image>
+				<reportElement x="492" y="0" width="80" height="80" uuid="48d33eeb-353d-420f-a840-7febae18d85d"/>
+				<imageExpression><![CDATA[$P{logoal}]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="107" y="64" width="376" height="1" forecolor="#0000FF" uuid="4457049c-ad54-49d5-858f-774b50ec5af9"/>
+			</line>
+			<image>
+				<reportElement x="0" y="0" width="80" height="80" uuid="fcc61fb8-ce8c-428e-8aa7-4bae30ec463f"/>
+				<imageExpression><![CDATA[$P{logoes}]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="107" y="74" width="376" height="1" forecolor="#0000FF" uuid="69cb7ed1-c20f-4972-8464-1db17a7ba791"/>
+			</line>
+			<staticText>
+				<reportElement x="106" y="24" width="371" height="20" forecolor="#006699" uuid="db366b4b-27fd-4644-9384-1dada13c7418"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ALCALDIA MUNICIPAL VILLA SAN CRISTOBAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="159" y="10" width="262" height="22" uuid="d0763f29-1557-4b5c-98a1-23c9c1b4c85e"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REGISTRO DEL ESTADO FAMILIAR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="128" y="41" width="332" height="14" forecolor="#000000" uuid="c7eb3a48-ada4-4db7-bd87-c2ef41095df6"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DEPARTAMENTO DE CUSCATLÁN, TEL.: 2379-7131]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="100" y="16" width="386" height="20" uuid="eda51224-ef0e-4583-acf3-c2963b9a99db"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Activos Adquiridos Recientemente]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="571" height="20" backcolor="#F4F4F4" uuid="b1b98fd3-a3f0-4903-9be1-b5c2e3e7ba8c"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="8541be54-b4be-4630-a7d2-c30dc4e38978"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Codigo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="131" y="0" width="100" height="20" uuid="e79d103d-0bf2-4c48-ae2a-d1103d36a533"/>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="231" y="0" width="100" height="20" uuid="9cad5183-f0a3-492f-9211-2b671e746a34"/>
+				<text><![CDATA[Marca]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="454" y="0" width="108" height="20" uuid="290d3243-42fd-461e-b313-9b95be3489f4"/>
+				<text><![CDATA[Fecha de Adquisicion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="331" y="0" width="100" height="20" uuid="99263ad2-34bb-4b86-8a1e-e5eae854bd71"/>
+				<text><![CDATA[Modelo]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="572" height="20" uuid="666b87c0-a39d-483f-8b5a-af6ba37376d0"/>
+			</rectangle>
+			<textField>
+				<reportElement x="0" y="0" width="131" height="20" uuid="a23c67aa-029f-411b-92ce-6ee8242e05d1"/>
+				<textFieldExpression><![CDATA[$F{cod_act}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="131" y="0" width="100" height="20" uuid="a775e995-5d02-4019-ad4e-8b505decca82"/>
+				<textFieldExpression><![CDATA[$F{nom}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="231" y="0" width="100" height="20" uuid="0c1f7934-7b4f-4e1c-8a61-cb8ebf4b21b0"/>
+				<textFieldExpression><![CDATA[$F{mar}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" pattern="dd/MM/yyyy">
+				<reportElement x="454" y="0" width="65" height="20" uuid="2a61afba-4a1a-4f1a-9b76-b40ae5ab2979"/>
+				<textFieldExpression><![CDATA[$F{fec_adq}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="331" y="0" width="100" height="20" uuid="a88bc6a3-fae8-4531-a487-540840f6dcdb"/>
+				<textFieldExpression><![CDATA[$F{mod}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="471" y="2" width="100" height="20" uuid="12a1f91a-09bb-4c90-9e67-35797b27b49c"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="261" y="2" width="37" height="20" uuid="23971abc-07a9-4a92-95bb-1590cdc2e157"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="322" y="2" width="100" height="20" uuid="66f9c4e8-4575-4257-823b-36c4ddcb426e"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="296" y="2" width="27" height="20" uuid="cd783258-21bf-4190-b749-4c6e02e3ad5a"/>
+				<text><![CDATA[de]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="211" y="2" width="50" height="20" uuid="7aa9f704-effa-41f3-9106-082e938039bd"/>
+				<text><![CDATA[Pagina]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

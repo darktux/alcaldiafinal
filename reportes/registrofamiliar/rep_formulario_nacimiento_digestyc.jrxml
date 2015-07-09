@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rep_formulario_nacimiento_digestyc" language="groovy" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="28154473-de27-4054-943d-71f0964cf5c4">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="512"/>
+	<property name="ireport.y" value="467"/>
+	<parameter name="num_lib" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="num_par" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT * FROM rf_nacimiento_partida WHERE (num_lib, num_par) = ($P{num_lib}, $P{num_par})]]>
+	</queryString>
+	<field name="ano_lib" class="java.lang.Integer"/>
+	<field name="num_lib" class="java.lang.Integer"/>
+	<field name="num_tom" class="java.lang.Integer"/>
+	<field name="num_pag" class="java.lang.Integer"/>
+	<field name="num_par" class="java.lang.Integer"/>
+	<field name="nom" class="java.lang.String"/>
+	<field name="sex" class="java.lang.String"/>
+	<field name="lug_nac" class="java.lang.String"/>
+	<field name="dep_nac" class="java.lang.String"/>
+	<field name="mun_nac" class="java.lang.String"/>
+	<field name="fec_nac" class="java.sql.Date"/>
+	<field name="hor_min" class="java.sql.Time"/>
+	<field name="nom_mad" class="java.lang.String"/>
+	<field name="ape1_mad" class="java.lang.String"/>
+	<field name="ape2_mad" class="java.lang.String"/>
+	<field name="eda_mad" class="java.lang.Integer"/>
+	<field name="ocu_mad" class="java.lang.String"/>
+	<field name="dep_ori_mad" class="java.lang.String"/>
+	<field name="mun_ori_mad" class="java.lang.String"/>
+	<field name="dep_res_mad" class="java.lang.String"/>
+	<field name="mun_res_mad" class="java.lang.String"/>
+	<field name="nac_mad" class="java.lang.String"/>
+	<field name="doc_mad" class="java.lang.String"/>
+	<field name="num_doc_mad" class="java.lang.String"/>
+	<field name="nom_pad" class="java.lang.String"/>
+	<field name="ape1_pad" class="java.lang.String"/>
+	<field name="ape2_pad" class="java.lang.String"/>
+	<field name="eda_pad" class="java.lang.Integer"/>
+	<field name="ocu_pad" class="java.lang.String"/>
+	<field name="dep_ori_pad" class="java.lang.String"/>
+	<field name="mun_ori_pad" class="java.lang.String"/>
+	<field name="dep_res_pad" class="java.lang.String"/>
+	<field name="mun_res_pad" class="java.lang.String"/>
+	<field name="nac_pad" class="java.lang.String"/>
+	<field name="doc_pad" class="java.lang.String"/>
+	<field name="num_doc_pad" class="java.lang.String"/>
+	<field name="nom_inf" class="java.lang.String"/>
+	<field name="ape1_inf" class="java.lang.String"/>
+	<field name="ape2_inf" class="java.lang.String"/>
+	<field name="doc_inf" class="java.lang.String"/>
+	<field name="num_doc_inf" class="java.lang.String"/>
+	<field name="par_inf" class="java.lang.String"/>
+	<field name="fir" class="java.lang.String"/>
+	<field name="ded" class="java.lang.String"/>
+	<field name="man" class="java.lang.String"/>
+	<field name="vir_ase" class="java.lang.String"/>
+	<field name="fec_vir_ase" class="java.sql.Date"/>
+	<field name="dec_tes" class="java.lang.String"/>
+	<field name="nom_tes1" class="java.lang.String"/>
+	<field name="ape1_tes1" class="java.lang.String"/>
+	<field name="ape2_tes1" class="java.lang.String"/>
+	<field name="doc_tes1" class="java.lang.String"/>
+	<field name="num_doc_tes1" class="java.lang.String"/>
+	<field name="nom_tes2" class="java.lang.String"/>
+	<field name="ape1_tes2" class="java.lang.String"/>
+	<field name="ape2_tes2" class="java.lang.String"/>
+	<field name="doc_tes2" class="java.lang.String"/>
+	<field name="num_doc_tes2" class="java.lang.String"/>
+	<field name="nom_reg" class="java.lang.String"/>
+	<field name="fec" class="java.sql.Date"/>
+	<field name="cue" class="java.lang.String"/>
+	<field name="esc_lib" class="java.lang.String"/>
+	<field name="cod_per" class="java.lang.Integer"/>
+	<field name="cod_mad" class="java.lang.Integer"/>
+	<field name="cod_pad" class="java.lang.Integer"/>
+	<field name="cod_inf" class="java.lang.Integer"/>
+	<field name="cod_tes1" class="java.lang.Integer"/>
+	<field name="cod_tes2" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="9" splitType="Stretch"/>
+	</title>
+	<detail>
+		<band height="561" splitType="Stretch">
+			<rectangle>
+				<reportElement x="1" y="1" width="750" height="551" uuid="3ff22996-215c-486b-a207-f3c35662344e"/>
+			</rectangle>
+			<image>
+				<reportElement x="2" y="2" width="36" height="40" uuid="1406a028-0be3-4907-9c92-55f745242e4d"/>
+				<imageExpression><![CDATA["..\\..\\img\\logo_digestyc.jpg"]]></imageExpression>
+			</image>
+			<rectangle>
+				<reportElement x="3" y="40" width="33" height="128" uuid="b21c890e-7677-4bae-8880-12edb0cf7d89"/>
+			</rectangle>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="3" y="42" width="14" height="111" uuid="764d3a78-76ef-4b36-9a7b-e1c43b65a1e2"/>
+				<textElement rotation="None">
+					<font size="12" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[R E C  I  E N]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="43" width="13" height="110" uuid="b0912d11-9229-4b1b-9ba7-3748ae0398bd"/>
+				<textElement rotation="None">
+					<font size="12" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[N A C I D O]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="3" y="170" width="33" height="190" uuid="bfaad898-e45a-44fc-91cf-2ec4b1bd45cd"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="3" y="363" width="33" height="88" uuid="2ca33b3b-a291-4ae8-a1d4-182ed45a3be7"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="3" y="453" width="33" height="70" uuid="71fd53c4-10d2-4bef-a26b-2a2637970f4f"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="38" y="40" width="348" height="128" uuid="cf38e522-501c-40b2-87f2-e58c984e5011"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="388" y="40" width="361" height="128" uuid="4a86eaf5-cf90-4c49-8c13-b2417611998f"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="38" y="170" width="348" height="190" uuid="155ceb2e-8667-4c0f-9282-abe2b6a6d95a"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="388" y="170" width="361" height="190" uuid="aa5d5e5c-e5a2-4618-b99b-c4169117a4c3"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="38" y="363" width="348" height="88" uuid="50725dfe-b9b8-42dc-a691-2d464ad1d2a2"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="388" y="363" width="361" height="88" uuid="38258062-e2c0-4168-8a7a-85a93713f23d"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="38" y="453" width="348" height="70" uuid="d211c875-491e-4bcc-b802-366a9add53f7"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="388" y="453" width="361" height="70" uuid="ef153771-1648-4f54-b9bd-67e7ba107cd6"/>
+			</rectangle>
+			<textField>
+				<reportElement x="413" y="483" width="323" height="20" uuid="cc275bd4-9090-4c0a-aa5d-4e958a820382"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["31. Nombre, Firma y sello del Registrador/a del Estado Familiar: "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="79" y="20" width="63" height="15" uuid="1bbc3d59-bf21-40f8-8f79-9ff16f124c64"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Libro : " + $F{num_lib}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="155" y="20" width="59" height="15" uuid="9d4d772f-c08d-4d6b-b2f8-47a8f102062f"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Tomo: " + $F{num_tom}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="232" y="20" width="289" height="20" uuid="5493c977-b10f-40ad-9ffe-f70bb007b781"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[REGISTRO DE NACIDOS VIVOS]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="521" y="20" width="77" height="15" uuid="1b14f866-0fe6-49fe-b38b-a4f05a657a24"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Partida No: " + $F{num_par}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="632" y="20" width="59" height="15" uuid="efc432d8-04a8-4be0-812f-67de37cf6427"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Folio: " + $F{num_pag}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="39" y="51" width="258" height="15" uuid="c7602c4a-a58f-41a9-a655-f9c76790414e"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["1. Nombre completo del recien nacido: " + $F{nom}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="39" y="85" width="328" height="15" uuid="e1a8c9af-6f97-434c-b801-b2704b3117df"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["2. Local de Nacimiento: " + $P{loc_nac}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="39" y="119" width="258" height="15" uuid="1f521ca7-8c9d-4e72-a4cb-5d338b695f1e"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["3. Fecha del parto: "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="60" y="153" width="258" height="15" uuid="b6bfb28c-94b9-4a95-b0ff-3b89226b5d35"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Hora:  " + $P{hor_min} + "  Dia: " + $P{dia_nac} + "  Mes: " + $P{mes_nac} + "  Año: " + $P{ano_nac}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="413" y="51" width="258" height="15" uuid="a562959b-1b67-4673-9ac0-e85868b8b17d"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["4. Lugar de nacimiento: "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="433" y="68" width="258" height="15" uuid="b497ac5f-90fb-4109-9c42-ca96eeed5652"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Departamento:  " + $F{dep_nac}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="433" y="85" width="258" height="15" uuid="dab76ccd-0e53-41ef-ad59-f5f4f6a8d147"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Municipio: " + $F{mun_nac}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="433" y="102" width="258" height="15" uuid="7fc52697-7030-46a2-b03e-7ca3cff34d1e"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Cantón: " + $P{can_nac}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="566" y="119" width="153" height="15" uuid="cca07558-1542-4596-907b-445282ff4494"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["6. Peso al nacer:  " + $P{pes_nac} + " gramos"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="413" y="119" width="153" height="15" uuid="872f5616-1244-44cc-b21d-a3d8cbab8ff0"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["5. Sexo:  " + $P{sex}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="413" y="136" width="153" height="15" uuid="9fea9ada-40f9-498a-96fb-8cbedfdf0ac6"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["7. Talla al nacer: " + $P{tal} + " cm"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="566" y="136" width="153" height="15" uuid="4c63d7d3-a4c8-4ce9-8141-a7bb9310e882"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["8. Clase de parto:  " + $P{cla_par}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="413" y="153" width="153" height="15" uuid="c3a11310-d153-42c3-812f-02524eea2854"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["9. Tipo de parto:  " + $P{tip_par}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="39" y="175" width="328" height="15" uuid="dd46971c-48f0-4608-bf30-f6bc489b4607"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["10. Nombre completo de la madre: " + $F{nom_mad} + " " + $F{ape1_mad} + " " + $F{ape2_mad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="39" y="195" width="153" height="15" uuid="65e23c60-d6d6-4a6a-b8d0-f27cbcf05ba3"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["11. Edad:  " + $F{eda_mad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="39" y="215" width="328" height="15" uuid="cfec28f7-a185-4ea4-b557-653391d9a7a3"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["12. Nombre del asistente: " + $P{nom_asi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="60" y="235" width="223" height="15" uuid="ae47f992-48d1-4220-ad99-70c8a423e137"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Tipo de asistencia:  " + $P{car_asi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="39" y="255" width="328" height="15" uuid="6c76c2e9-ddc7-49b9-9691-e36ad540c814"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["13. Duración del embarazo: " + $P{dur_emb} + " meses de gestación"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="39" y="275" width="258" height="15" uuid="6c85560e-d0bc-4d6f-bb27-004e735265b7"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["14. Estado conyugal: " + $P{est_fam}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="39" y="291" width="258" height="15" uuid="1277a99c-a108-494d-8cce-66bbd68b5a2b"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["15. Sabe leer y escribir: " + $P{alf_mad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="39" y="311" width="258" height="15" uuid="9c31719b-a80c-47b7-a3a3-6c5d971cfb9e"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["16. Ocupación actual: " + $F{ocu_mad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="413" y="175" width="258" height="15" uuid="fbb48a3e-aa16-468c-a25e-5e70ce6fbd57"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["17. Lugar de residencia actual: "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="433" y="192" width="179" height="15" uuid="f45548cb-0ac6-404b-84bb-73ace2a73467"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Departamento:  " + $F{dep_res_mad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="433" y="209" width="258" height="15" uuid="a84aae79-1c9b-4ed4-8ea8-50d0edd1eac4"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Municipio: " + $F{mun_res_mad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="433" y="226" width="258" height="15" uuid="03eebc5d-1917-404c-89d4-8373958e92cd"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Cantón: " + $P{can_res}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="632" y="192" width="104" height="15" uuid="20dd4bb5-4360-4aac-9083-98da40e282d7"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Area: " + $P{are_res}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="412" y="243" width="220" height="15" uuid="09c11d1d-ed0d-4ef3-a005-c055a6f173a8"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["18. Lugar de nacimiento: "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="433" y="260" width="179" height="15" uuid="7a578920-8ad6-4e40-bbcd-6a705cee4b07"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Departamento:  " + $F{dep_ori_mad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="433" y="277" width="217" height="15" uuid="33f44f04-46a5-4ee1-b2d6-dd18af33c0b3"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Municipio: " + $F{mun_res_mad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="632" y="243" width="104" height="15" uuid="1d7c2c2d-6e61-4f02-8672-e6b715b910a5"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["19. Nacionalidad: "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="632" y="260" width="104" height="15" uuid="d7cfa138-4d84-4407-b8d8-12c346587c42"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nac_mad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="412" y="294" width="220" height="15" uuid="05ccc194-e281-40b6-9d7d-2dfe8bc33fb5"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["20. Número de hijos: "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="432" y="311" width="314" height="15" uuid="9f3cbede-8d3d-41f3-b8f8-3a9b01758a71"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Cuantos hijos/as estan vivos incluyendo este recien nacido: " + $P{hij_nac_viv}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="432" y="328" width="314" height="15" uuid="1536063b-43c0-45e6-b2d8-b375812c6631"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["De los hijos/as nacidos vivos, cuántos han muerto: " + $P{hij_mue}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="432" y="345" width="314" height="15" uuid="7c1a910e-24ab-4708-9af7-3337ebabea5f"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Cuantos hijos nacieron muertos: " + $P{hij_nac_mue}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="39" y="371" width="328" height="20" uuid="7ec2676d-839a-47f5-97e1-480d417c2aef"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["21. Nombre completo del padre: " + $F{nom_pad} + " " + $F{ape1_pad} + " " + $F{ape2_pad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="39" y="391" width="153" height="20" uuid="22d4558d-f536-47e3-84d7-9412a8ac0860"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["22. Edad:  " + $F{eda_pad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="39" y="411" width="258" height="20" uuid="9e4b53bd-9910-4f76-b07c-ea8a8e613c9a"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["23. Sabe leer y escribir: " + $P{alf_pad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="412" y="371" width="258" height="20" uuid="67c933c2-0878-407f-9507-804613e4e78a"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["24. Ocupación actual: " + $F{ocu_pad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="412" y="391" width="220" height="20" uuid="5259b50a-8b71-4bff-99bf-86e80b38861b"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["25. Lugar de nacimiento: "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="433" y="411" width="179" height="20" uuid="10a657c3-4215-4db1-916f-736aaf67ab43"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Departamento:  " + $F{dep_ori_pad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="433" y="431" width="217" height="20" uuid="023fde5e-3fb0-4ce3-a9e9-29ec6c10d710"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Municipio: " + $F{mun_ori_pad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="632" y="391" width="104" height="20" uuid="eb9f5d37-76c0-411f-9ec1-cbee99b4efa0"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["26. Nacionalidad: "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="632" y="411" width="104" height="20" uuid="cc902f79-f5f3-4c96-a160-568eeccde5e4"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nac_pad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="38" y="463" width="329" height="20" uuid="97afc3e7-0999-4512-aed0-247741ca4516"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["27. Nombre del informante: " + $F{nom_inf} + " " + $F{ape1_inf} + " " + $F{ape2_inf}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="39" y="483" width="153" height="20" uuid="4a0051f5-bea2-4fb2-9493-1c938069cde6"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["28. Parentesco:  " + $F{par_inf}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="39" y="503" width="153" height="20" uuid="ed3c5791-83a2-49f0-a208-315df89eef49"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["29. Firma:  "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="214" y="483" width="153" height="20" uuid="99e2e6a6-9e74-4f8e-822b-75c81ff45f69"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["29. DUI:  " + $F{num_doc_inf}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="413" y="465" width="258" height="20" uuid="2036eb12-ab41-49d2-ad03-a63b5c8096be"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["30. Fecha de Registro: " + $P{fec_reg}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="413" y="503" width="258" height="20" uuid="d36ae92f-d193-44f8-8a4b-d7b42bd85614"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nom_reg}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

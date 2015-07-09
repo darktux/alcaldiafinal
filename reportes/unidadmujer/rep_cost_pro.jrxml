@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rep_cost_pro" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3a4cee7d-796e-4f49-b5fa-996e8b9755a8">
+	<property name="ireport.zoom" value="2.5937424601000028"/>
+	<property name="ireport.x" value="179"/>
+	<property name="ireport.y" value="546"/>
+	<parameter name="logoal" class="java.lang.String"/>
+	<parameter name="logoes" class="java.lang.String"/>
+	<parameter name="fechaReporte" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from um_proyecto]]>
+	</queryString>
+	<field name="cod_pro" class="java.lang.String"/>
+	<field name="nom_pro" class="java.lang.String"/>
+	<field name="des" class="java.lang.String"/>
+	<field name="ubi" class="java.lang.String"/>
+	<field name="fec_ini" class="java.sql.Date"/>
+	<field name="fec_fin" class="java.sql.Date"/>
+	<field name="tip_fon" class="java.lang.String"/>
+	<field name="mon_pro" class="java.lang.Double"/>
+	<field name="mon_ext" class="java.lang.Double"/>
+	<field name="pat" class="java.lang.String"/>
+	<field name="est" class="java.lang.String"/>
+	<variable name="suma" class="java.lang.Double" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$F{mon_pro}]]></variableExpression>
+	</variable>
+	<variable name="s2" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{mon_ext}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="87" splitType="Stretch">
+			<staticText>
+				<reportElement x="153" y="8" width="248" height="19" uuid="0ce991c7-33a5-4b2e-b5f8-5bc7a4702298"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[UNIDAD DE GENERO]]></text>
+			</staticText>
+			<image>
+				<reportElement x="12" y="1" width="80" height="78" uuid="895ba197-5dfc-4107-a532-915964416323"/>
+				<imageExpression><![CDATA[$P{logoes}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="92" y="23" width="386" height="20" forecolor="#0000FF" uuid="ee19718d-2b4e-4c83-ba59-5b4f900cafce"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[ALCALDIA MUNICIPAL VILLA DE SAN CRISTOBAL]]></text>
+			</staticText>
+			<line>
+				<reportElement x="102" y="63" width="376" height="1" forecolor="#0000FF" uuid="b72b870f-483a-4332-a2d5-3280f9985e95"/>
+			</line>
+			<staticText>
+				<reportElement x="151" y="43" width="250" height="20" uuid="af4c4f70-00c9-4678-8c1f-a662fd0b9ff9"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[DEPARTAMENTO DE CUSCATLAN, TEL. 23797131]]></text>
+			</staticText>
+			<image>
+				<reportElement x="492" y="1" width="80" height="78" uuid="f13b29ec-e12a-458b-aa4f-03b6784dd773"/>
+				<imageExpression><![CDATA[$P{logoal}]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="102" y="75" width="376" height="1" forecolor="#0000FF" uuid="fd88379f-a34d-46c9-95d6-8eed0816a466"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="190" y="0" width="188" height="20" uuid="204ec38b-03f8-478b-b375-04a150495dac"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reporte de Costos de Proyectos]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="29" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="572" height="29" backcolor="#F4F4F4" uuid="6a4190c9-29ba-45e9-8cb9-33e47c08023c"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="106" height="29" uuid="848402ab-aff7-4726-9544-47f894d87a74"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Codigo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="306" y="0" width="100" height="29" uuid="6ac69de2-a942-4f88-91dc-ed918536859a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Monto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="406" y="0" width="100" height="29" uuid="79a87114-b972-46a5-ade8-cd2bd7ecfa7d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Monto Externo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="206" y="0" width="100" height="29" uuid="2be00628-8160-452e-84c6-8b324f7cac0c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Estado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="506" y="0" width="66" height="29" uuid="4555046e-d2fb-45ee-b4c5-028c011f2652"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Monto Total]]></text>
+			</staticText>
+			<line>
+				<reportElement x="106" y="0" width="1" height="29" uuid="78182161-7031-476f-8964-19e3952600d0"/>
+			</line>
+			<staticText>
+				<reportElement x="107" y="0" width="100" height="29" uuid="add50ac6-62cc-42d7-b2e4-08d1dc07c5ab"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Proyecto]]></text>
+			</staticText>
+			<line>
+				<reportElement x="206" y="0" width="1" height="29" uuid="efc9b746-5ca5-4761-8773-ffec4800bea2"/>
+			</line>
+			<line>
+				<reportElement x="306" y="0" width="1" height="29" uuid="415a41fd-5432-4c5a-a7b4-ee98132986bb"/>
+			</line>
+			<line>
+				<reportElement x="406" y="0" width="1" height="29" uuid="46bc3a5e-1098-4fa1-8282-5a093f709ce6"/>
+			</line>
+			<line>
+				<reportElement x="506" y="0" width="1" height="29" uuid="ddb6d987-a4d0-4dce-9eb4-18a90656e36b"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="35" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="572" height="35" uuid="3dee72a2-8aa5-4ce2-aef5-0290730c629b"/>
+			</rectangle>
+			<textField>
+				<reportElement x="0" y="0" width="106" height="35" uuid="555b8bc8-a0e5-48f4-a35d-36a711aa8cee"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{cod_pro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="306" y="0" width="100" height="35" uuid="e3a729a0-ef68-4f65-b411-e3560feb2b0b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{mon_pro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="206" y="0" width="100" height="35" uuid="5d7cf340-a20c-4b97-9761-206f062f5113"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{est}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="506" y="0" width="66" height="35" uuid="8127856d-834b-4f7f-a678-68400d2db31d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{mon_pro}+$F{mon_ext}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="106" y="0" width="1" height="35" uuid="fc96fac4-281d-4add-99e3-fa63cc38ff0f"/>
+			</line>
+			<textField>
+				<reportElement x="107" y="0" width="100" height="35" uuid="4e044f81-7a8a-4177-97b6-16fbad8d4e81"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nom_pro}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="206" y="0" width="1" height="35" uuid="01924e28-5f10-48b3-8fa2-edecd28d210f"/>
+			</line>
+			<line>
+				<reportElement x="306" y="0" width="1" height="35" uuid="ba7563b4-b218-4f8d-8b3b-529279c3bf27"/>
+			</line>
+			<line>
+				<reportElement x="406" y="0" width="1" height="35" uuid="33c8e2e8-e2d0-4c50-a221-e926ab2e7b2c"/>
+			</line>
+			<line>
+				<reportElement x="506" y="0" width="1" height="35" uuid="b8f11f37-83fe-43b3-ab68-79e87330c841"/>
+			</line>
+			<textField pattern="###0.00;-###0.00">
+				<reportElement x="406" y="0" width="100" height="35" uuid="a08a4813-b841-4e7e-a429-bea85706bfca"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{mon_ext}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="32" splitType="Immediate"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="50" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="21" splitType="Stretch">
+			<rectangle>
+				<reportElement x="306" y="0" width="266" height="21" backcolor="#F4F4F4" uuid="923f233b-7782-473f-becb-2690957afba1"/>
+			</rectangle>
+			<textField pattern="###0.00" isBlankWhenNull="true">
+				<reportElement x="307" y="0" width="100" height="21" uuid="9345e040-336c-4ea0-9b9f-b5b4559df1a1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{suma}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="207" y="0" width="98" height="21" backcolor="#F4F4F4" uuid="6348d90c-eefe-44f8-872d-157ff266b85a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Totales:]]></text>
+			</staticText>
+			<textField evaluationTime="Column" pattern="###0.00" isBlankWhenNull="false">
+				<reportElement x="407" y="0" width="100" height="21" uuid="227b9ab8-a7d8-4559-96c9-07eb45c92271"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{s2}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Column" pattern="###0.00" isBlankWhenNull="true">
+				<reportElement x="507" y="1" width="65" height="20" uuid="ffa5ed02-7614-43d1-9432-6d252b26c74b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{suma}+$V{s2}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="506" y="0" width="1" height="21" uuid="f83a5a8e-cd5f-42dc-89cb-17a1c7d31076"/>
+			</line>
+			<line>
+				<reportElement x="406" y="0" width="1" height="21" uuid="d45cee68-3649-4533-b064-f016a03f47e0"/>
+			</line>
+		</band>
+	</summary>
+</jasperReport>

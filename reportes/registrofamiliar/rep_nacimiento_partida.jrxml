@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rep_nacimiento_partida" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="77a79691-440b-4cfd-afd1-963f84e84cb1">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[Select * from rf_nacimiento_partida;]]>
+	</queryString>
+	<field name="num_lib" class="java.lang.Integer"/>
+	<field name="ano_lib" class="java.lang.Integer"/>
+	<field name="num_pag" class="java.lang.Integer"/>
+	<field name="num_par" class="java.lang.Integer"/>
+	<field name="nom" class="java.lang.String"/>
+	<field name="sex" class="java.lang.String"/>
+	<field name="lug_nac" class="java.lang.String"/>
+	<field name="dep_nac" class="java.lang.String"/>
+	<field name="mun_nac" class="java.lang.String"/>
+	<field name="fec_nac" class="java.sql.Date"/>
+	<field name="hor_min" class="java.sql.Time"/>
+	<field name="nom_mad" class="java.lang.String"/>
+	<field name="ape1_mad" class="java.lang.String"/>
+	<field name="ape2_mad" class="java.lang.String"/>
+	<field name="eda_mad" class="java.lang.Integer"/>
+	<field name="ocu_mad" class="java.lang.String"/>
+	<field name="dep_ori_mad" class="java.lang.String"/>
+	<field name="mun_ori_mad" class="java.lang.String"/>
+	<field name="dep_res_mad" class="java.lang.String"/>
+	<field name="mun_res_mad" class="java.lang.String"/>
+	<field name="nac_mad" class="java.lang.String"/>
+	<field name="doc_mad" class="java.lang.String"/>
+	<field name="num_doc_mad" class="java.lang.String"/>
+	<field name="nom_pad" class="java.lang.String"/>
+	<field name="ape1_pad" class="java.lang.String"/>
+	<field name="ape2_pad" class="java.lang.String"/>
+	<field name="eda_pad" class="java.lang.Integer"/>
+	<field name="ocu_pad" class="java.lang.String"/>
+	<field name="dep_ori_pad" class="java.lang.String"/>
+	<field name="mun_ori_pad" class="java.lang.String"/>
+	<field name="dep_res_pad" class="java.lang.String"/>
+	<field name="mun_res_pad" class="java.lang.String"/>
+	<field name="nac_pad" class="java.lang.String"/>
+	<field name="doc_pad" class="java.lang.String"/>
+	<field name="num_doc_pad" class="java.lang.String"/>
+	<field name="nom_inf" class="java.lang.String"/>
+	<field name="ape1_inf" class="java.lang.String"/>
+	<field name="ape2_inf" class="java.lang.String"/>
+	<field name="doc_inf" class="java.lang.String"/>
+	<field name="num_doc_inf" class="java.lang.String"/>
+	<field name="par_inf" class="java.lang.String"/>
+	<field name="nom_tes1" class="java.lang.String"/>
+	<field name="ape1_tes1" class="java.lang.String"/>
+	<field name="ape2_tes1" class="java.lang.String"/>
+	<field name="doc_tes1" class="java.lang.String"/>
+	<field name="num_doc_tes1" class="java.lang.String"/>
+	<field name="nom_tes2" class="java.lang.String"/>
+	<field name="ape1_tes2" class="java.lang.String"/>
+	<field name="ape2_tes2" class="java.lang.String"/>
+	<field name="doc_tes2" class="java.lang.String"/>
+	<field name="num_doc_tes2" class="java.lang.String"/>
+	<field name="nom_reg" class="java.lang.String"/>
+	<field name="fec" class="java.sql.Date"/>
+	<field name="cue" class="java.lang.String"/>
+	<field name="esc_lib" class="java.lang.String"/>
+	<field name="cod_per" class="java.lang.Integer"/>
+	<field name="cod_mad" class="java.lang.Integer"/>
+	<field name="cod_pad" class="java.lang.Integer"/>
+	<field name="cod_inf" class="java.lang.Integer"/>
+	<field name="cod_tes1" class="java.lang.Integer"/>
+	<field name="cod_tes2" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="88" splitType="Stretch">
+			<image>
+				<reportElement x="52" y="26" width="59" height="54" uuid="fd378bce-3d9f-4294-bc57-1a4e463c4a35"/>
+				<imageExpression><![CDATA["..\\..\\img\\logoes.jpg"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="443" y="26" width="67" height="54" uuid="f15dc53f-920e-493f-91f1-d4a4bfbaaa68"/>
+				<imageExpression><![CDATA["..\\..\\img\\logoal.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="142" y="26" width="262" height="22" uuid="4230e682-b194-4446-812c-f634612b8196"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REGISTRO DEL ESTADO FAMILIAR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="89" y="40" width="371" height="20" forecolor="#006699" uuid="c831bab9-bbad-47d7-9d97-934464c5c730"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ALCALDIA MUNICIPAL VILLA SAN CRISTOBAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="111" y="57" width="332" height="14" forecolor="#000000" uuid="fc94029b-9d3e-4d75-8e40-82e9147c70af"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DEPARTAMENTO DE CUSCATLÁN, TEL.: 2379-7131]]></text>
+			</staticText>
+			<line>
+				<reportElement x="119" y="71" width="312" height="1" forecolor="#0000CC" uuid="75e82567-5252-40f9-907b-fa8696c7881b"/>
+			</line>
+			<line>
+				<reportElement x="119" y="76" width="312" height="1" forecolor="#0000FF" uuid="df8d225a-efbc-4eb3-a2a5-68cc9523574a"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="175" y="4" width="190" height="20" uuid="c5e9c4d9-42c2-4aed-a7a7-937fcd94b1d2"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reporte de Nacimientos]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="33" splitType="Stretch">
+			<rectangle>
+				<reportElement x="2" y="2" width="568" height="31" uuid="bc63ca23-9325-4d5c-ba48-03d717cbc2f5"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="5" y="1" width="74" height="32" uuid="e34d1582-79e8-4ea8-8950-de32d61ab9ec"/>
+				<textElement>
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Fecha de Nacimiento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="267" y="2" width="146" height="19" uuid="81e06f82-13f9-49d5-b3d9-bac88b40e674"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Nombre del Padre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="414" y="2" width="156" height="19" uuid="afd1f8f4-14d6-4877-9ab0-5c573788aebb"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Nombre de la Madre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="79" y="2" width="52" height="19" uuid="67aee16a-6750-46d4-ae85-bcaf80f1ebea"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Sexo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="131" y="3" width="123" height="19" uuid="10c87d27-a5ce-4027-ab42-979d64f8342a"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="2" y="0" width="568" height="20" uuid="e6b93a05-cc61-4416-b0c7-33aa8eef41a5"/>
+			</rectangle>
+			<textField>
+				<reportElement x="4" y="3" width="52" height="16" uuid="178d58f3-9525-4b5a-843c-2aaf79b1938d"/>
+				<textFieldExpression><![CDATA[$F{fec_nac}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="266" y="3" width="146" height="16" uuid="2014352e-8b38-4e30-91aa-6930e70b8142"/>
+				<textFieldExpression><![CDATA[$F{nom_pad} + " " + $F{ape1_pad} + " " + $F{ape2_pad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="414" y="3" width="156" height="16" uuid="10cc67a0-fe84-4e37-86b1-4a3f78d3654d"/>
+				<textFieldExpression><![CDATA[$F{nom_mad} + " " + $F{ape1_mad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="79" y="3" width="52" height="16" uuid="cb6ea117-ee57-4def-acd9-65ed0df90815"/>
+				<textFieldExpression><![CDATA[$F{sex}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="131" y="3" width="123" height="16" uuid="7336be1f-b6f9-43e0-b5d4-2b9d03d6ad6e"/>
+				<textFieldExpression><![CDATA[$F{nom}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement x="292" y="33" width="100" height="20" uuid="61130b9e-96a1-4323-a9dc-455f795f3dc5"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="181" y="33" width="50" height="20" uuid="abbc356f-e4f9-4420-8153-b1913b5c2c1e"/>
+				<text><![CDATA[Pagina]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="266" y="33" width="27" height="20" uuid="26d280ac-8af7-4f61-9b98-18601b9c47f0"/>
+				<text><![CDATA[de]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="230" y="33" width="37" height="20" uuid="de58402c-f76c-45b0-b098-a9797334524d"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

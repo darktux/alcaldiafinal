@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rep_proy_eje" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="625d05ff-2321-488b-9672-b3f93ee5039f">
+	<property name="ireport.zoom" value="1.1269722013523686"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="logoes" class="java.lang.String"/>
+	<parameter name="logoal" class="java.lang.String"/>
+	<parameter name="fechaReporte" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT * FROM rf_persona rp,ca_negocio cn WHERE rp.cod_per=cn.cod_con and cn.est_neg='t']]>
+	</queryString>
+	<field name="cod_per" class="java.lang.Integer"/>
+	<field name="nom" class="java.lang.String"/>
+	<field name="ape1" class="java.lang.String"/>
+	<field name="ape2" class="java.lang.String"/>
+	<field name="sex" class="java.lang.String"/>
+	<field name="fec_nac" class="java.sql.Date"/>
+	<field name="dui" class="java.lang.String"/>
+	<field name="nit" class="java.lang.String"/>
+	<field name="tel1" class="java.lang.String"/>
+	<field name="tel2" class="java.lang.String"/>
+	<field name="dir" class="java.lang.String"/>
+	<field name="ocu" class="java.lang.String"/>
+	<field name="est_civ" class="java.lang.String"/>
+	<field name="dep" class="java.lang.String"/>
+	<field name="mun" class="java.lang.String"/>
+	<field name="cod_neg" class="java.lang.Integer"/>
+	<field name="nom_neg" class="java.lang.String"/>
+	<field name="rub_neg" class="java.lang.String"/>
+	<field name="zon_neg" class="java.lang.String"/>
+	<field name="dir_neg" class="java.lang.String"/>
+	<field name="med_neg" class="java.lang.Double"/>
+	<field name="img_neg" class="java.lang.String"/>
+	<field name="est_neg" class="java.lang.Boolean"/>
+	<field name="tip_con" class="java.lang.String"/>
+	<field name="cod_con" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="88" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="80" height="80" uuid="314ffe22-5f9a-4e7f-9865-28a93810c2b6"/>
+				<imageExpression><![CDATA[$P{logoes}]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="492" y="0" width="80" height="80" uuid="ec62edc6-3f42-4f23-b744-3cece5458517"/>
+				<imageExpression><![CDATA[$P{logoal}]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="100" y="65" width="376" height="1" forecolor="#0000FF" uuid="fa31b512-b593-4ae3-8348-437528533970"/>
+			</line>
+			<line>
+				<reportElement x="100" y="75" width="376" height="1" forecolor="#0000FF" uuid="f9153546-392d-44e8-ad37-c92032160cc1"/>
+			</line>
+			<staticText>
+				<reportElement x="103" y="27" width="371" height="20" forecolor="#006699" uuid="78e10c71-6c71-4075-98ff-f6b7637f3d09"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ALCALDIA MUNICIPAL VILLA SAN CRISTOBAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="146" y="12" width="262" height="22" uuid="0a1c9e86-0124-4fbd-868e-69ff811a9677"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CATASTRO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="116" y="47" width="332" height="14" forecolor="#000000" uuid="f272d8c2-258b-4377-a127-7e84e2d3fda1"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DEPARTAMENTO DE CUSCATLÁN, TEL.: 2379-7131]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="50">
+			<staticText>
+				<reportElement x="187" y="11" width="188" height="20" uuid="a5284d3e-ea5f-4d45-ba83-f03deb180deb"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reporte de Negocios]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="572" height="20" backcolor="#F4F4F4" uuid="6be64437-1575-47e4-87ea-da985b0b9f40"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="de06141d-2473-4549-90f7-1c6aa5a5e136"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Nombre del Negocio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="125" y="0" width="154" height="20" uuid="8bf3b667-b415-4911-a753-8909bc0e06f7"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Dirección]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="375" y="0" width="197" height="20" uuid="435cf58a-7f89-4d0e-859a-8ac0607a9a4a"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Propietario]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="572" height="20" uuid="87688e8f-94fe-46c9-8855-a62e2ddfb1bb"/>
+			</rectangle>
+			<textField>
+				<reportElement x="0" y="1" width="120" height="20" uuid="4d680232-827a-4af6-a24d-13b3614dd86c"/>
+				<textFieldExpression><![CDATA[$F{nom_neg}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="125" y="1" width="250" height="20" uuid="9d680f87-25c1-4a60-9d14-2078adfd84d8"/>
+				<textFieldExpression><![CDATA[$F{dir_neg}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="375" y="0" width="197" height="20" uuid="3b3057fb-5dce-494c-a8b0-b2c9cd1915d8"/>
+				<textFieldExpression><![CDATA[$F{nom}+" "+$F{ape1}+" "+$F{ape2}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="50"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="50">
+			<textField evaluationTime="Report">
+				<reportElement x="298" y="30" width="100" height="20" uuid="9f678de9-fe65-448f-bd85-54a5e8ca5045"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="272" y="30" width="27" height="20" uuid="2a2e6bf4-a9c6-46f5-b2d0-5e93bdb4139a"/>
+				<text><![CDATA[de]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="187" y="30" width="50" height="20" uuid="2ddf5efd-a63d-496e-8451-fba540ae53cf"/>
+				<text><![CDATA[Pagina]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="237" y="30" width="37" height="20" uuid="dd8e0c21-d401-4014-9422-6e1e529f46d5"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="472" y="30" width="100" height="20" uuid="5c6178c4-c8f8-457a-9cb6-4a03f43448a7"/>
+				<textFieldExpression><![CDATA[$P{fechaReporte}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

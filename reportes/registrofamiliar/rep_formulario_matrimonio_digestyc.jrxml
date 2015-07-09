@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rep_formulario_nacimiento_digestyc" language="groovy" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="28154473-de27-4054-943d-71f0964cf5c4">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="24"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="num_lib" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="num_par" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT * FROM rf_matrimonio_digestyc WHERE (num_lib, num_par) = ($P{num_lib}, $P{num_par})]]>
+	</queryString>
+	<field name="num_lib" class="java.lang.Integer"/>
+	<field name="num_par" class="java.lang.Integer"/>
+	<field name="dep_mat" class="java.lang.String"/>
+	<field name="mun_mat" class="java.lang.String"/>
+	<field name="eda_eso" class="java.lang.Integer"/>
+	<field name="dep_eso" class="java.lang.String"/>
+	<field name="mun_eso" class="java.lang.String"/>
+	<field name="can_eso" class="java.lang.String"/>
+	<field name="zon_eso" class="java.lang.String"/>
+	<field name="est_civ_eso" class="java.lang.String"/>
+	<field name="alf_eso" class="java.lang.String"/>
+	<field name="ocu_eso" class="java.lang.String"/>
+	<field name="eda_esa" class="java.lang.Integer"/>
+	<field name="dep_esa" class="java.lang.String"/>
+	<field name="mun_esa" class="java.lang.String"/>
+	<field name="can_esa" class="java.lang.String"/>
+	<field name="zon_esa" class="java.lang.String"/>
+	<field name="est_civ_esa" class="java.lang.String"/>
+	<field name="alf_esa" class="java.lang.String"/>
+	<field name="ocu_esa" class="java.lang.String"/>
+	<field name="fec_reg" class="java.sql.Date"/>
+	<field name="nom_reg" class="java.lang.String"/>
+	<field name="obs" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="9" splitType="Stretch"/>
+	</title>
+	<detail>
+		<band height="561" splitType="Stretch">
+			<rectangle>
+				<reportElement x="1" y="1" width="750" height="551" uuid="3ff22996-215c-486b-a207-f3c35662344e"/>
+			</rectangle>
+			<image>
+				<reportElement x="2" y="2" width="36" height="40" uuid="1406a028-0be3-4907-9c92-55f745242e4d"/>
+				<imageExpression><![CDATA["..\\..\\img\\logo_digestyc.jpg"]]></imageExpression>
+			</image>
+			<rectangle>
+				<reportElement x="3" y="40" width="33" height="128" uuid="b21c890e-7677-4bae-8880-12edb0cf7d89"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="3" y="170" width="33" height="190" uuid="bfaad898-e45a-44fc-91cf-2ec4b1bd45cd"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="3" y="363" width="33" height="88" uuid="2ca33b3b-a291-4ae8-a1d4-182ed45a3be7"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="3" y="453" width="33" height="70" uuid="71fd53c4-10d2-4bef-a26b-2a2637970f4f"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="38" y="40" width="348" height="128" uuid="cf38e522-501c-40b2-87f2-e58c984e5011"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="388" y="40" width="361" height="128" uuid="4a86eaf5-cf90-4c49-8c13-b2417611998f"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="38" y="170" width="348" height="190" uuid="155ceb2e-8667-4c0f-9282-abe2b6a6d95a"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="388" y="170" width="361" height="190" uuid="aa5d5e5c-e5a2-4618-b99b-c4169117a4c3"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="38" y="363" width="348" height="88" uuid="50725dfe-b9b8-42dc-a691-2d464ad1d2a2"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="388" y="363" width="361" height="88" uuid="38258062-e2c0-4168-8a7a-85a93713f23d"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="38" y="453" width="348" height="70" uuid="d211c875-491e-4bcc-b802-366a9add53f7"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="388" y="453" width="361" height="70" uuid="ef153771-1648-4f54-b9bd-67e7ba107cd6"/>
+			</rectangle>
+			<textField>
+				<reportElement x="79" y="20" width="63" height="15" uuid="1bbc3d59-bf21-40f8-8f79-9ff16f124c64"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Libro : " + $F{num_lib}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="155" y="20" width="59" height="15" uuid="9d4d772f-c08d-4d6b-b2f8-47a8f102062f"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Tomo: "]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="232" y="20" width="289" height="20" uuid="5493c977-b10f-40ad-9ffe-f70bb007b781"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[CERTIFICADO DE MATRIMONIO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="521" y="20" width="77" height="15" uuid="1b14f866-0fe6-49fe-b38b-a4f05a657a24"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Partida No: "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="632" y="20" width="59" height="15" uuid="efc432d8-04a8-4be0-812f-67de37cf6427"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Folio: "]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="62" y="49" width="195" height="15" uuid="5737a315-8b12-4d88-b6e9-bdb42e64858a"/>
+				<text><![CDATA[1. Lugar del matrimonio]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>
