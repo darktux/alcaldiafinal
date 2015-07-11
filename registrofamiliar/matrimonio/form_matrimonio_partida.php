@@ -10,6 +10,8 @@
 		<script type="text/javascript" src="../../js/jquery.min-1.7.1-google.js" ></script>
 		<script type="text/javascript" src="../../js/bootstrap-2.0.2.js"></script>
 		<script src="../../js/pnotify.custom.js"></script>
+		<script type="text/javascript" src="../../js/funciones.js"></script>
+		<script type="text/javascript" src="../../js/jquery.maskedinput.js"></script>
 	</head>
 	<body>
 	
@@ -18,7 +20,7 @@
 		</div>
 		
 		<!-- Inicia Formulario Principal -->
-		<form class="form-horizontal well" name="form_matrimonio_partida" id="form_matrimonio_partida" action="" method="POST" >
+		<form class="form form-horizontal well" name="form_matrimonio_partida" id="form_matrimonio_partida" action="" method="POST" >
 			<legend>Registro de Partidas de Matrimonio</legend>
 			
 			<input type="hidden" name="accion" value="guardar-matrimonio-partida">
@@ -72,16 +74,18 @@
 				<div class="control-group span6">
 					<label class="control-label" for="nom_eso">Nombre del esposo (*)</label>
 					<div class="controls">
-						<input type="text" class="span3" name="nom_eso" id="nom_eso" tabindex="6" readonly>
+						<input type="text" class="input-medium" name="nom_eso" id="nom_eso" tabindex="6" readonly>
 						<button type="button" class="btn" name="btn-buscar-esposo" id="btn-buscar-esposo" data-toggle="modal" href="#buscar-esposo" tabindex="-1"><i class="icon-search"></i></button>
+						<button type="button" class="btn" name="btn-registrar-esposo" id="btn-registrar-esposo" data-toggle="modal" href="#modal-registrar-esposo" tabindex="-1"><i class="icon-plus"></i></button>
 					</div>
 				</div>
 
 				<div class="control-group span6">
 					<label class="control-label" for="nom_esa">Nombre de la esposa (*)</label>
 					<div class="controls">
-						<input type="text" class="span3" name="nom_esa" id="nom_esa" tabindex="9" readonly>
+						<input type="text" class="input-medium" name="nom_esa" id="nom_esa" tabindex="9" readonly>
 						<button type="button" class="btn" name="btn-buscar-esposa" id="btn-buscar-esposa" data-toggle="modal" href="#buscar-esposa" tabindex="-1"><i class="icon-search"></i></button>
+						<button type="button" class="btn" name="btn-registrar-esposa" name="btn-registrar-esposa" data-toggle="modal" href="#modal-registrar-esposa" tabindex="-1"><i class="icon-plus"></i></button>
 					</div>
 				</div>
 			</div>
@@ -151,6 +155,276 @@
 		</form>
 		<!-- Termina Formulario Principal -->
 
+		<!-- Inicia Formulario modal de registro del esposo -->
+		<div class="modal hide fade" id="modal-registrar-esposo">
+			<div class="modal-header">
+				<a class="close" data-dismiss="modal">×</a>
+				<h3>Registrar Esposo</h3>
+			</div>
+			<div class="modal-body">
+				<div class="well">
+					<form class="form form-horizontal" name="form_registrar_esposo" id="form_registrar_esposo" action="" method="POST">
+						
+						<input type="hidden" name="accion" value="guardar-y-retornar">
+						<div class="control-group">
+							<label class="control-label" for="nom">Nombre</label>
+							<div class="controls">
+								<input type="text" class="span3" name="nom">
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="ape1">Primer Apellido</label>
+							<div class="controls">
+								<input type="text" class="span3" name="ape1">
+							</div>
+						</div>
+
+						<div class="control-group">
+							<label class="control-label" for="ape2">Segundo Apellido</label>
+							<div class="controls">
+								<input type="text" class="span3" name="ape2">
+							</div>
+						</div>
+
+						<div class="control-group">
+							<label class="control-label">Sexo</label>
+							<div class="controls">
+							<label class="radio inline">
+								<input type="radio" name="sex" value="M" checked="">
+								Masculino
+							</label>
+							<label class="radio inline">
+								<input type="radio" name="sex" value="F">
+								Femenino
+							</label>
+							</div>
+						</div>
+						
+						<div class="control-group">
+							<label class="control-label">Fecha de nacimiento</label>
+							<div class="controls">
+								<input type="date" class="span3" name="fec_nac" max="<?php echo date('Y-m-d') ?>">
+							</div>
+						</div>
+						
+						<div class="control-group">
+							<label class="control-label" for="ocu">Ocupación</label>
+							<div class="controls">
+								<input type="text" class="input-xlarge" name="ocu">
+							</div>
+						</div>
+									
+						<div class="control-group">
+							<label class="control-label" for="est_civ">Estado civil</label>
+							<div class="controls">
+								<select class="span2" name="est_civ">
+									<option>Casado/a</option>
+									<option>Soltero/a</option>
+									<option>Acompañado/a</option>
+									<option>Viudo/a</option>
+									<option>Divorciado/a</option>
+								</select>
+							</div>
+						</div>
+						
+						<div class="control-group">
+							<label class="control-label">DUI</label>
+							<div class="controls">
+								<input type="text" class="span2" name="dui">
+							</div>
+						</div>
+						
+						<div class="control-group">
+							<label class="control-label">NIT</label>
+							<div class="controls">
+								<input type="text" class="span3" name="nit">
+							</div>
+						</div>
+						
+						<div class="control-group">
+							<label class="control-label">Telefono 1</label>
+							<div class="controls">
+								<input type="text" class="span2" name="tel1">
+							</div>
+						</div>
+						
+						<div class="control-group">
+							<label class="control-label">Telefono 2</label>
+							<div class="controls">
+								<input type="text" class="span2" name="tel2">
+							</div>
+						</div>
+						
+						<div class="control-group">
+							<label class="control-label" for="dep">Departamento de residencia</label>
+							<div class="controls">
+								<select class="span2" name="dep" id="dep_eso" onchange="cargarMunicipios('dep_eso', 'mun_eso')"></select>
+							</div>
+						</div>
+							
+						<div class="control-group">
+							<label class="control-label" for="mun">Municipio de residencia</label>
+							<div class="controls">
+								<select name="mun" id="mun_eso"></select>
+							</div>
+						</div>
+						
+						<div class="control-group">
+							<label class="control-label">Dirección</label>
+							<div class="controls">
+								<textarea class="input-xlarge" name="dir" rows="4"></textarea>
+							</div>
+						</div>
+						
+					<div class="form-actions">
+						<button type="button" class="btn" id="btn-guardar-esposo" name="btn-guardar-esposo" data-dismiss="modal"><img src="../../img/icon-save.png" height="14" width="14"> Guardar</button>
+						<button type="reset" class="btn"><i class="icon-trash"></i> Limpiar</button>
+					</div>
+					</form>
+				</div>
+				<div id="resultado-buscar-esposo"></div>
+			</div>
+			<div class="modal-footer">
+				<a href="#" class="btn" data-dismiss="modal"><i class="icon-remove"></i> Cancelar</a>
+			</div>
+		</div>
+		<!-- Termina Formulario modal de registro del esposo -->
+
+		<!-- Inicia Formulario modal de registro de la esposa -->
+		<div class="modal hide fade" id="modal-registrar-esposa">
+			<div class="modal-header">
+				<a class="close" data-dismiss="modal">×</a>
+				<h3>Registrar Esposa</h3>
+			</div>
+			<div class="modal-body">
+				<div class="well">
+					<form class="form form-horizontal" name="form_registrar_esposa" id="form_registrar_esposa" action="" method="POST">
+						
+						<input type="hidden" name="accion" value="guardar-y-retornar">
+						<div class="control-group">
+							<label class="control-label" for="nom">Nombre</label>
+							<div class="controls">
+								<input type="text" class="span3" name="nom">
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="ape1">Primer Apellido</label>
+							<div class="controls">
+								<input type="text" class="span3" name="ape1">
+							</div>
+						</div>
+
+						<div class="control-group">
+							<label class="control-label" for="ape2">Segundo Apellido</label>
+							<div class="controls">
+								<input type="text" class="span3" name="ape2">
+							</div>
+						</div>
+
+						<div class="control-group">
+							<label class="control-label">Sexo</label>
+							<div class="controls">
+							<label class="radio inline">
+								<input type="radio" name="sex" value="M">
+								Masculino
+							</label>
+							<label class="radio inline">
+								<input type="radio" name="sex" value="F" checked="">
+								Femenino
+							</label>
+							</div>
+						</div>
+						
+						<div class="control-group">
+							<label class="control-label">Fecha de nacimiento</label>
+							<div class="controls">
+								<input type="date" class="span3" name="fec_nac" max="<?php echo date('Y-m-d') ?>">
+							</div>
+						</div>
+						
+						<div class="control-group">
+							<label class="control-label" for="ocu">Ocupación</label>
+							<div class="controls">
+								<input type="text" class="input-xlarge" name="ocu">
+							</div>
+						</div>
+									
+						<div class="control-group">
+							<label class="control-label" for="est_civ">Estado civil</label>
+							<div class="controls">
+								<select class="span2" name="est_civ">
+									<option>Casado/a</option>
+									<option>Soltero/a</option>
+									<option>Acompañado/a</option>
+									<option>Viudo/a</option>
+									<option>Divorciado/a</option>
+								</select>
+							</div>
+						</div>
+						
+						<div class="control-group">
+							<label class="control-label">DUI</label>
+							<div class="controls">
+								<input type="text" class="span2" name="dui">
+							</div>
+						</div>
+						
+						<div class="control-group">
+							<label class="control-label">NIT</label>
+							<div class="controls">
+								<input type="text" class="span3" name="nit">
+							</div>
+						</div>
+						
+						<div class="control-group">
+							<label class="control-label">Telefono 1</label>
+							<div class="controls">
+								<input type="text" class="span2" name="tel1">
+							</div>
+						</div>
+						
+						<div class="control-group">
+							<label class="control-label">Telefono 2</label>
+							<div class="controls">
+								<input type="text" class="span2" name="tel2">
+							</div>
+						</div>
+						
+						<div class="control-group">
+							<label class="control-label" for="dep">Departamento de residencia</label>
+							<div class="controls">
+								<select class="span2" name="dep" id="dep_esa" onchange="cargarMunicipios('dep_esa', 'mun_esa')"></select>
+							</div>
+						</div>
+							
+						<div class="control-group">
+							<label class="control-label" for="mun">Municipio de residencia</label>
+							<div class="controls">
+								<select name="mun" id="mun_esa"></select>
+							</div>
+						</div>
+						
+						<div class="control-group">
+							<label class="control-label">Dirección</label>
+							<div class="controls">
+								<textarea class="input-xlarge" name="dir" rows="4"></textarea>
+							</div>
+						</div>
+						
+					<div class="form-actions">
+						<button type="button" class="btn" id="btn-guardar-esposa" name="btn-guardar-esposa" data-dismiss="modal"><img src="../../img/icon-save.png" height="14" width="14"> Guardar</button>
+						<button type="reset" class="btn"><i class="icon-trash"></i> Limpiar</button>
+					</div>
+					</form>
+				</div>
+				<div id="resultado-buscar-esposo"></div>
+			</div>
+			<div class="modal-footer">
+				<a href="#" class="btn" data-dismiss="modal"><i class="icon-remove"></i> Cancelar</a>
+			</div>
+		</div>
+		<!-- Termina Formulario modal de registro de la esposa -->
+
 		<!-- Inicia Formulario modal de búsqueda del esposo -->
 		<div class="modal hide fade" id="buscar-esposo" >
 			<div class="modal-header">
@@ -212,6 +486,19 @@
 			
 			/* Inicia codigo de configuración Inicial */
 			$(document).ready(function(){
+
+				cargarDepartamentos("dep_eso");
+				cargarMunicipios("dep_eso", "mun_eso");
+				cargarDepartamentos("dep_esa");
+				cargarMunicipios("dep_esa", "mun_esa");
+
+				/* Inicia código para establecer las mascaras */
+				$("input[name='dui']").mask("99999999-9");
+				$("input[name='nit']").mask("9999-999999-999-9");
+				$("input[name='tel1']").mask("99999999");
+				$("input[name='tel2']").mask("99999999");
+				/* Termina código para establecer las mascaras */
+
 				new PNotify({
 					title: 'Información',
 					text: 'Los campos con (*) son obligatorios.',
@@ -233,6 +520,49 @@
 			   			return false;
 	   				}
 	 			});
+
+	 		/* Inicia código para funcionalidad del botón guardar del formulario de registro de esposo */
+			$(function(){
+				$("#btn-guardar-esposo").click(function(){
+					//if(validarVacios()){
+						if (confirm("¿Esta seguro de querer guardar estos datos?")){
+							$.ajax({
+								type : "POST",
+								url : "../persona/proc_persona_modal.php",
+								data : $("#form_registrar_esposo").serialize(),
+								success : function(data){
+									//$("#mensajes").html(data);
+									//cargarEsposo(data);
+									cargarEsposo(JSON.parse(data));
+								}
+							});
+						}
+					//}
+				});
+			});
+			/*  Termina código para funcionalidad del boton guardar del formulario de registro de esposo */
+
+			/* Inicia código para funcionalidad del botón guardar del formulario de registro de esposa */
+			$(function(){
+				$("#btn-guardar-esposa").click(function(){
+					//if(validarVacios()){
+						if (confirm("¿Esta seguro de querer guardar estos datos?")){
+							$.ajax({
+								type : "POST",
+								url : "../persona/proc_persona_modal.php",
+								data : $("#form_registrar_esposa").serialize(),
+								success : function(data){
+									//$("#mensajes").html(data);
+									//cargarEsposo(data);
+									cargarEsposa(JSON.parse(data));
+								}
+							});
+						}
+					//}
+				});
+			});
+			/*  Termina código para funcionalidad del boton guardar del formulario de registro de esposa */
+
 
 				$("#btn2-buscar-esposo").click(function(){
 	 				var url = "proc_matrimonio_partida.php";

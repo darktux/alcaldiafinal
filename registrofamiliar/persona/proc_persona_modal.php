@@ -2,7 +2,7 @@
 	require_once("../../php/conexion.php");
 	$conexion = conectar();
 	
-	switch ($_POST["accion"]) {
+	switch ($_POST["accion"]){
 		case 'guardar-y-retornar';
 			guardarYRetornar();
 			break;
@@ -28,29 +28,7 @@
 					}
 				}			
 			echo json_encode($fila);
-		}
-	}
-
-	}
-
-	function prueba(){
-		$consulta = "SELECT * FROM rf_persona WHERE dui='04223023-5'";
-			$resultado = pg_query($consulta);
-
-			if(pg_num_rows($resultado)>0){
-			$registro = pg_fetch_array($resultado);
-
-				$fila= array();
-				foreach($registro as $clave => $valor){
-					if(is_string($x = $clave)){
-						$fila[$clave] = $valor;
-					}
-				}
-			#list($ano, $mes, $dia) = explode("-", $fila[fec_nac]);
-			//$fila[fec_for] = $dia . "-" . $mes . "-" . $ano;
-			#$fila[nom_com] = $fila[nom] . " " . $fila[ape1] . " " . $fila[ape2];
-			
-			echo json_encode($fila);
+			}
 		}
 	}
 ?>
