@@ -37,7 +37,7 @@
 			</table>
 		</div>
 		<div class="modal-footer">
-			<a href="#" class="btn" data-dismiss="modal"><i class="icon-remove"></i> Cancelar</a>
+			<a href="#" class="btn" data-dismiss="modal" onclick="cancela()"><i class="icon-remove"></i> Cancelar</a>
 		</div>
 	</div>
 	<script>
@@ -59,6 +59,9 @@
 
 	function cargaDatos(codtit){
 		window.open("reportes/reporte_expediente.php?codigo="+codtit+"","_self");
+	}
+	function cancela(){
+		parent.location="index_unidadmujer.php";
 	}
 	</script>
 </body>

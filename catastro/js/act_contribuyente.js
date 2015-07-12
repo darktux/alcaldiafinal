@@ -208,5 +208,4 @@ function limpiarCampos(){
 
 function cancela(){
 	parent.location="index_catastro.php";
-
 }
