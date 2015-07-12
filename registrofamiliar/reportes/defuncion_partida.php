@@ -124,7 +124,7 @@
 		
 		$cuerpo .= "\n\nAl margen de la partida se lee: "; 
 		while ($registro2 = pg_fetch_array($resultado2)) {
-			$cuerpo .= "\n" . $registro2[cue];
+			$cuerpo .= "\n" . $registro2['cue'];
 		}
 	}
 
