@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rep_nacimiento_partida" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="77a79691-440b-4cfd-afd1-963f84e84cb1">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="135"/>
 	<parameter name="num_lib" class="java.lang.Integer">
 		<defaultValueExpression><![CDATA[null]]></defaultValueExpression>
 	</parameter>
@@ -93,64 +93,50 @@ $F{num_lib} + ", de PARTIDAS DE MATRIMONIO, tomo " + $F{num_tom}+ ", del año "
 + $F{ano_lib} + ", se encuentra la que literalmente dice:"]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
-				<reportElement x="52" y="59" width="474" height="296" uuid="2aec1bde-0694-4f3d-ab49-d4d46816b7b6"/>
+				<reportElement x="52" y="59" width="474" height="178" uuid="2aec1bde-0694-4f3d-ab49-d4d46816b7b6"/>
 				<textElement textAlignment="Justified">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{cue}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="52" y="237" width="474" height="117" uuid="988c1bac-c3c7-4f6e-80db-481033138636"/>
+				<textElement textAlignment="Justified">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{marginacion}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
 	<pageFooter>
 		<band height="196" splitType="Stretch">
 			<textField isStretchWithOverflow="true">
-				<reportElement x="52" y="0" width="474" height="53" uuid="b2ac521a-5017-4d59-a3c5-926e4e4fbca3"/>
+				<reportElement x="52" y="40" width="474" height="53" uuid="b2ac521a-5017-4d59-a3c5-926e4e4fbca3"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Es conforme con su original, la que se confrontó, y para efectos legales, se extiende la presente, en la Alcaldía Municipal, Villa San Cristóbal,"]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="52" y="98" width="175" height="21" uuid="f384804e-7808-4f62-b138-cf0a8c0fbff4"/>
+				<reportElement x="192" y="98" width="175" height="21" uuid="f384804e-7808-4f62-b138-cf0a8c0fbff4"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
 				<text><![CDATA[F____________________]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="52" y="130" width="211" height="21" uuid="cbd00bb7-55f7-4aad-aee2-1a0c485642c1"/>
+				<reportElement x="172" y="130" width="211" height="21" uuid="cbd00bb7-55f7-4aad-aee2-1a0c485642c1"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
 				<text><![CDATA[Sr. Pedro Antonio Vásquez Pérez]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="52" y="151" width="175" height="21" uuid="cff5ae52-6944-4ae0-9ca0-77148259f430"/>
+				<reportElement x="192" y="151" width="175" height="21" uuid="cff5ae52-6944-4ae0-9ca0-77148259f430"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
 				<text><![CDATA[Alcalde Municipal]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="351" y="98" width="175" height="21" uuid="a4978973-8fd8-4463-a09e-b8a770317bdf"/>
-				<textElement>
-					<font size="12"/>
-				</textElement>
-				<text><![CDATA[F____________________]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="351" y="151" width="175" height="21" uuid="c4394ee6-c504-4535-b20e-ff92656726fc"/>
-				<textElement>
-					<font size="12"/>
-				</textElement>
-				<text><![CDATA[Secretario Municipal]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="351" y="130" width="175" height="21" uuid="15985089-f5d4-41f5-95ac-c1ee254997e4"/>
-				<textElement>
-					<font size="12"/>
-				</textElement>
-				<text><![CDATA[Lic. Alvaro Antonio Pineda]]></text>
 			</staticText>
 		</band>
 	</pageFooter>

@@ -117,6 +117,17 @@
 		$cuerpo .= " $enm.";
 	}
 
+	// verificar si hay marginaciones
+	$consulta2 = "SELECT * FROM rf_marginacion WHERE (num_lib,num_par,tip) = ('$_GET[num_lib]','$_GET[num_par]','defuncion')";
+	$resultado2 = pg_query($consulta2);
+	if(pg_num_rows($resultado2)>0){
+		
+		$cuerpo .= "\n\nAl margen de la partida se lee: "; 
+		while ($registro2 = pg_fetch_array($resultado2)) {
+			$cuerpo .= "\n" . $registro2[cue];
+		}
+	}
+
 	$cuerpo .= "\n\nEs conforme con su original, la que se confrontó y para efectos legales, se extiende la " .
 	"presente, en la Alcaldía Municipal, Villa San Cristóbal, $dia_act de $mes_act del año $ano_act.";
 

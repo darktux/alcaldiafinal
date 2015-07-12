@@ -87,17 +87,27 @@
 	// Datos del Informante
 	"Dio estos datos $nom_inf $ape1_inf $ape2_inf, quien se identifica por medio de " .
 	"$doc_inf número $num_doc_inf, manifestando ser $par_inf del recien nacido " .
-	"y para constancia firma. Alcaldía Municipal, Villa San Cristóbal, Cuscatlán $dia_reg de $mes_reg de $ano_reg." .
+	"y para constancia firma. Alcaldía Municipal, Villa San Cristóbal, Cuscatlán $dia_reg de $mes_reg de $ano_reg.";
 	
-	"\n\nEs conforme con su original, la que se confrontó y para efectos legales, se extiende la presente, en la Alcaldía " .
+	
+	// verificar si hay marginaciones
+	$consulta2 = "SELECT * FROM rf_marginacion WHERE (num_lib,num_par,tip) = ('$_GET[num_lib]','$_GET[num_par]','nacimiento')";
+	$resultado2 = pg_query($consulta2);
+	if(pg_num_rows($resultado2)>0){
+		
+		$cuerpo .= "\n\nAl margen de la partida se lee: "; 
+		while ($registro2 = pg_fetch_array($resultado2)) {
+			$cuerpo .= "\n" . $registro2[cue];
+		}
+	}
+
+	$cuerpo .="\n\nEs conforme con su original, la que se confrontó y para efectos legales, se extiende la presente, en la Alcaldía " .
 	"Municipal, Villa San Cristóbal, $dia_act de $mes_act del año $ano_act.";
+
 
 	$PHPJasperXML->arrayParameter=array("logoes"=>$logoes,"logoal"=>$logoal,"fechaReporte"=>$fecha, 
 	"num_lib"=>$_GET[num_lib], "num_par"=>$_GET[num_par], "cuerpo"=>$cuerpo);
-	//$PHPJasperXML->arrayParameter=array("logoes"=>$logoes,"logoal"=>$logoal,"fechaReporte"=>$fecha, "num_lib"=>104, "num_par"=>1);
-
-			//echo $PHPJasperXML->arrayParameter[num_lib];
-			//echo $_GET[num_par];
+	
 			$archivo="../../reportes/registrofamiliar/nacimiento_partida.jrxml";
 			$PHPJasperXML->load_xml_file($archivo);
 			$PHPJasperXML->transferDBtoArray("localhost","admin","admin","db_alcaldia","psql");

@@ -50,10 +50,8 @@
 								<li><a href="matrimonio/form_matrimonio_partida.php" target="centro" onclick="$('#centro').attr({height:'1000px'})"><i class="icon-list-alt"></i> Matrimonio</a></li>
 								<li><a href="divorcio/form_divorcio_partida.php" target="centro" onclick="$('#centro').attr({height:'1000px'})"><i class="icon-list-alt"></i> Divorcio</a></li>
 								<li><a href="defuncion/form_defuncion_partida.php" target="centro" onclick="getElementById('centro').height='1200px'"><i class="icon-list-alt"></i> Defunci&oacute;n</a></li>
-								<!-- <li class="nav-header">Marginaciones</li>
-								<li><a href="nacimiento/cons_nacimiento_partida_marginacion.php" target="centro" onclick="getElementById('centro').height='575px'"><i class="icon-edit"></i> Nacimiento</a></li>
-								<li><a href="matrimonio/form_marginacion_matrimonio.php" target="centro" onclick="getElementById('centro').height='575px'"><i class="icon-edit"></i> Matrimonio</a></li>
-								-->
+								<li class="nav-header">Marginaciones</li>
+									<li><a href="marginacion/form_marginacion.php" target="centro" onclick="getElementById('centro').height='575px'"><i class="icon-list-alt"></i> Marginación</a></li>
 								<li class="nav-header">Actas</li>
 								<li><a href="matrimonio/form_matrimonio_acta.php" target="centro" onclick="$('#centro').attr({height:'1000px'})"><i class="icon-list-alt"></i> Matrimonio</a></li>			
 							</ul>
@@ -62,7 +60,7 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Cobro<b class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<li><a href="../colecturia/form_factura.php?estado=false" target="centro" onclick="getElementById('centro').height='1000px'"><i class="icon-edit"></i>Factura</a></li>
+								<li><a href="../colecturia/form_factura.php?estado=false" target="centro" onclick="getElementById('centro').height='1000px'"><i class="icon-list-alt"></i>Factura</a></li>
 							</ul>
 						</li>
 
